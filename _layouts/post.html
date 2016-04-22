@@ -13,7 +13,7 @@ layout: default
     	 • 
     	{{ page.author }}
     	{% endif %}
-    	{% if page.tags %}
+    	{% if page.tags.size > 0 %}
     	 • 
     	 	{% for tag in page.tags %}
 	    	<span class="badge">{{ tag }}</span>
