@@ -32,6 +32,10 @@
         color: $grey-color-dark;
     }
 
+    &:hover {
+        text-decoration: none;
+    }
+
     img {
         height: 50px;
         margin-top: -4px;
