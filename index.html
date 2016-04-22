@@ -8,6 +8,10 @@ layout: default
     {% for post in site.posts %}
       <li>
         
+        <h2 class="no-space-bottom">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
         <div class="text-muted">
           <small datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ post.date | date: "%b %-d, %Y" }}
@@ -24,10 +28,7 @@ layout: default
           </small>
         </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {{ post.excerpt }}
+        <p>{{ post.excerpt }}</p>
       </li>
     {% endfor %}
   </ul>
