@@ -4,12 +4,25 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        
+        <div class="text-muted">
+          <small datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ post.date | date: "%b %-d, %Y" }}
+          {% if post.author %}
+           • 
+          {{ post.author }}
+          {% endif %}
+          {% if post.tags.size > 0 %}
+           • 
+            {% for tag in post.tags %}
+            <span class="badge">{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+          </small>
+        </div>
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
