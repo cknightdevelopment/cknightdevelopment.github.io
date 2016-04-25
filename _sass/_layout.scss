@@ -13,6 +13,12 @@
     }
 }
 
+.post-content {
+    h3 {
+        color: darken($brand-color, 5%);
+    }
+}
+
 /**
  * Site header
  */
@@ -168,4 +174,19 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+}
+
+
+/**		
+* Posts		
+*/		
+.post-header {
+    
+    margin-bottom: 25px;
+    		
+    .post-basic-info {		
+        border-top: 1px solid $grey-color-light;		
+        border-bottom: 1px solid $grey-color-light;		
+        padding: 3px 0;		
+    }		
 }
