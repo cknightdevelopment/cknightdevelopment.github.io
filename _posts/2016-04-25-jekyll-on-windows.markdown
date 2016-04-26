@@ -6,7 +6,7 @@ categories: [Jekyll]
 tags: [Jekyll, GitHub Pages]
 ---
 
-Jekyll with GitHub Pages is an awesome way to create, manage, and host your blog, project, or organization page. This blog is built using this combination of technologies, and it has been a greate to work with. 
+Jekyll with GitHub Pages is an awesome way to create, manage, and host your blog or project/organization site. Knight Codes is built using these technologies and they have proven to be fantastic to work with. 
 
 ### Overview
 
