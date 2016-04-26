@@ -17,9 +17,9 @@ There are a lot of advantages to using Jekyll with GitHub pages including:
 3. GitHub Pages provides a simplified build process for your site (all you do is commit your changes)
 4. Your site is source controlled with Git
 
-This post does not aim to teach you about [Jekyll](https://jekyllrb.com/) or [GitHub Pages](https://pages.github.com/) in depth, but rather how to setup your environment on Windows to get things running. I found a lot of useful content out there, but nothing that I could really follow from start to finish and have a working site by the end of it. This is especially true since I am running on Windows. Also, I ran into a few snags along the way, which these instructions should help you to avoid.
+This post does not aim to teach you about [Jekyll](https://jekyllrb.com/) or [GitHub Pages](https://pages.github.com/) in depth, but is here to guide you through setting up your environment on Windows and getting things running. I found a lot of useful content out there, but nothing that I could follow from start to finish and have a working site by the end of it. This is especially true since I am running on Windows. Also, I ran into a few snags along the way that these instructions should help you avoid.
 
-_NOTE: These instruction assume you are making a personal page (e.g. blog). If you are making a page for a project, organization, etc. the only change is that you will need to name your GitHub repository and/or branch differently than instructed below. [GitHub lays it all out for you](https://help.github.com/articles/user-organization-and-project-pages/#project-pages) based on your needs._
+_NOTE: These instruction assume you are making a personal page (e.g. blog). If you are making a page for a project, organization, etc. the only change is that you will need to name your GitHub repository and/or branch differently than instructed below. [GitHub lays out all the options](https://help.github.com/articles/user-organization-and-project-pages) for you based on your needs._
 
 ### GitHub Setup
 
