@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Understanding Angular Directive Scopes
-date:   2016-05-02 14:00:00 -0700
+date:   2016-05-15 14:00:00 -0700
 categories: [Angular]
 tags: [Angular, JavaScript]
 ---
