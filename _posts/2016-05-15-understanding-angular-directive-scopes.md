@@ -6,33 +6,35 @@ categories: [Angular]
 tags: [Angular, JavaScript]
 ---
 
-One of the most powerful features in Angular is the ability to create your own custom directives. They allow you to create more modular code that can be re-used throughout your application. However, undestanding how scope works with custom directives is by no means obvious and can often be really confusing. How can your directive access scope properties from a controller? How do you give a directive it's own scope? How can you isolate your directive's scope from the rest of your application? We will address these questions and more in this post. 
+One of the most powerful features in Angular is the ability to create custom directives. They allow you to write more modularized code that can be re-used throughout your application. However, understanding how scope works within a custom directive can often be confusing and is by no means obvious. How does your directive access scope properties on a controller? How do you give a directive it's own scope? How can you isolate your directive's scope from the rest of your application? We will address these questions and more in this post. 
 
 ### Overview
 
-I have found that there are 4 main ways to setup a directive's scope, each of which can be useful for different use cases. I am sure that there are hybrids of these 4 setups, but this will at least give you a solid foundation to start from. I have found that it is often helpful to give things memorable names when learning, so I will refer to these scope setups as follows (each of which will be shown in more detail later):
+I have found that there are 4 primary ways to configure a directive's scope, each of which can be useful in different scenarios. I am sure there are hybrids of these 4 configurations, but these will at least give you a solid foundation to start from. It is often helpful to give things memorable names when learning, so I will refer to these scope configurations as follows (each will be explained in more detail later):
 
 1. [Moocher](#moocher)
 
-   The directive does not have any scope of its own and just uses (mooches) the scope of the controller. Everything in the controller's scope is accessible from the directive.
+   The directive does not have any scope of its own and just uses (mooches) the scope of the view that contains it. Everything in the controller's scope is accessible from the directive.
 
 2. [Borrower](#borrower)
 
-   The directive has a scope of it's own and it inherits (borrows) the scope of the controller as well. Everything in the controller's scope is accessible from the directive, but not the other way around.
+   The directive has a scope of it's own and it also inherits (borrows) the scope of the view that contains it. Everything in the controller's scope is accessible from the directive.
 
 3. [Loner](#loner)
 
-   The directive has its own isolated (loner) scope. The directive's scope does not inherit anything from the scope of the controller. It is a lone ranger.
+   The directive has its own isolated (loner) scope. The directive's scope does not inherit anything from the scope of the view that contains it. It is a lone ranger.
 
 4. [Negotiator](#negotiator)
 
-   The directive has it's own scope and shares (negotiates) with the controller scope. One-way and two-way data binding of scope properties can be configured, as well as function/expression bindings. Only the scope properties configured to be "shared" are accessible from the directive.
+   The directive has it's own scope and shares (negotiates) the scope of the view that contains it. One-way and two-way data binding of scope properties can be configured, as well as function/expression bindings. Only the scope properties configured to be "shared" are accessible from the directive.
+   
+_NOTE: The examples below are using the angular "controller as" syntax (learn about it [here](https://johnpapa.net/angularjss-controller-as-and-the-vm-variable/)). If you don't know what that is just know that the controller scope on the views is referred to as `vm`, as in `vm.scopePropertyName`._
    
 ### Moocher
  
 #### Controller
 
-The `PersonCtrl` controller sets three properties on it's scope: `firstName`, `lastName`, and `speak`.
+The `PersonCtrl` controller sets three properties on the `person` object defined on it's scope: `firstName`, `lastName`, and `speak`.
 
 ```
 angular.module("app")
@@ -50,7 +52,7 @@ angular.module("app")
 
 #### Directive
 
-The `moocher` directive has no scope of it's own and will use the scope of the view that contains it (`PersonCtrl` in our example). This scope is in fact the `scope` parameter passed to the `link()` function on the directive. You don't have to do anything with this scope if you don't want (you don't even need to define a `link()` function at all). However, if you want to add data or behaviors to the scope from the directive, you can do something like what we are doing with `msgFromDirective`. The controller and all instances of the directive will share the same scope and their data will be in sync.
+The `moocher` directive has no scope of it's own and will use the scope of the view that contains it (`PersonCtrl` in our example). This scope is the `scope` parameter passed to the `link()` function on the directive. You don't have to do anything with this scope if you don't want (you don't even need to define a `link()` function at all). However, if you want to add data or behaviors to the scope from the directive, you can do something like what we are doing with `msgFromDirective`. The controller and all instances of the directive will share the same scope and their data will be in sync.
 
 ```
 angular.module("app")
@@ -111,7 +113,7 @@ All the properties put on the scope by the `PersonCtrl` controller and all the p
 
 #### Controller
 
-The `CarCtrl` controller sets three properties on it's scope: `make`, `model`, and `getInfo`.
+The `CarCtrl` controller sets three properties on the `car` object defined in it's scope: `make`, `model`, and `getInfo`.
 
 ```
 angular.module("app")
@@ -129,7 +131,7 @@ angular.module("app")
 
 #### Directive
 
-The `borrower` directive has a scope of its own provided by `BorrowerCtrl` and also inherits from the scope of the view that contains it (`CarCtrl` is our example). _This is accomplished by the `scope` on the directive being set to `true`_. The `BorrowerCtrl` adds a `year` property to it's `car` object on it's scope.
+The `borrower` directive has a scope of its own provided by `BorrowerCtrl` and also inherits from the scope of the view that contains it (`CarCtrl` is our example). _This is accomplished by the `scope` on the directive being set to `true`_. The `BorrowerCtrl` adds a `year` property to the `car` object on it's scope.
 
 ```
 angular.module("app")
@@ -185,7 +187,7 @@ The main view can access it's scope properties as usual, but cannot access the `
 
 #### Borrower View
 
-The view for the `borrower` directive is able to access the `CarCtrl`'s scope properties via `vm`. The view sets the `BorrowerCtrl` scope to `borrowerVm`, which allows us to display the `year` property via `{% raw %}{{borrowerVm.car.year}}{% endraw %}`. Every instance of `borrower` will inherit the same scope from `CarCtrl`, but will get it's own scope from `BorrowerCtrl`. This mean that updates to `make` & `model` will effect the main view and all directive views, but changes to `year` will only effect that `BorrowerCtrl`'s scope & view.
+The view for the `borrower` directive is able to access the `CarCtrl`'s scope properties via `vm`. The `BorrowerCtrl` scope to `borrowerVm`, which allows us to display the `year` property via `{% raw %}{{borrowerVm.car.year}}{% endraw %}`. Every instance of `borrower` will inherit the same scope from `CarCtrl`, but will get it's own scope from `BorrowerCtrl`. This mean that updates to `make` & `model` will effect the main view and all directive views, but changes to `year` will only effect that `BorrowerCtrl`'s scope & view.
 
 ```
 <div ng-controller="BorrowerCtrl as borrowerVm">
@@ -205,7 +207,7 @@ The view for the `borrower` directive is able to access the `CarCtrl`'s scope pr
 
 ### Loner
 
-This `StereoCtrl` controller sets three properties on `stereo` object in it's scope: `min`, `max`, and `getInfo`.
+This `StereoCtrl` controller sets three properties on the `stereo` object defined in it's scope: `min`, `max`, and `getInfo`.
 
 #### Controller
 ```
@@ -244,6 +246,8 @@ angular.module("app")
 
 #### Main View
 
+Nothing special here, just basic model binding that we have already seen.
+
 ```
 <h3>From Controller</h3>
 
@@ -278,7 +282,7 @@ angular.module("app")
 
 #### Loner View
 
-Our view for the `loner` directive will use the scope provided by the `LonerCtrl`, which defines it's own `min` & `max` scope properties with different values than the ones on `StereoCtrl`. Each instance of the `loner` directive will get its own isolated version of the `LonerCtrl`. This means that if you change the `min` or  `max` on a directive it does not effect any other instances of the directive.
+The `loner` directive view will use the scope provided by the `LonerCtrl`. It defines it's own `stereo` object with `min` & `max` scope properties with different values than the ones on `StereoCtrl`. Each instance of the `loner` directive will get its own isolated version of the `LonerCtrl`. This means that if you change the `min` or  `max` on a directive it will not effect any of the other instances of the directive.
 
 ```
 <div ng-controller="LonerCtrl as vm">
@@ -324,7 +328,7 @@ angular.module("app")
 
 #### Directive
 
-This is where things get fun! The `negotiator` directive has it's own scope, but _negotiates_ with the scope of the controller that contains it (`IceCreamCtrl` in our example). A scope property named `flavaFlave` will be created and have a **one-way** binding with the property `flavor` that is passed to the instance of the directive (will make more sense when looking at the main view below). A scope property named `howBig` will be created and have a **two-way** binding with the property `size` that is passed to the instance of the directive. A scope function property named `getTheDeets` will be created and assigned to the property `getInfo` that is passed to the instance of the directive. Lastly, a scope function named `soundTheAlarm` will be created and assigned to the property `alertText` that is passed to the instance of the directive. The function will be passed isolated scope data from the directive's isolated scope. Here is a simple way to remember the binding syntax:
+This is where things get fun! The `negotiator` directive has it's own scope, but _negotiates_ with the scope of the view that contains it (`IceCreamCtrl` in our example). A scope property named `flavaFlave` will be created and have a **one-way** binding with the property `flavor` that is passed to the instance of the directive (will make more sense when looking at the main view below). A scope property named `howBig` will be created and have a **two-way** binding with the property `size` that is passed to the instance of the directive. A scope function property named `getTheDeets` will be created and assigned to the property `getInfo` that is passed to the instance of the directive. Lastly, a scope function named `soundTheAlarm` will be created and assigned to the property `alertText` that is passed to the instance of the directive. The function will be passed isolated scope data from the directive's isolated scope (more on that later). Here is a simple way to remember the binding syntax:
 
 * `@` = one-way
 * `=` = two-way
@@ -355,7 +359,7 @@ angular.module("app")
 
 #### Main View
 
-The only new stuff going on in this view compared to others we have seen is the `<negotiator>` elements at the bottom. Notice how we are setting attributes on the `<negotiator>` element that correspond to the scope bindings mentioned above in the directive section. That is how the `negotiator` directive binds it's scope properties. 
+The only new stuff going on in this view is the `<negotiator>` elements at the bottom. Notice how we are setting attributes on the `<negotiator>` element that correspond to the scope bindings mentioned above in the directive section. That is how the `negotiator` directive binds it's scope properties. 
 
 One important thing to see is the `vm.alert(blah)` we are setting to the `alert-text` attribute. What is that `blah` all about? It is the name of the property we are going to use in our call to `getInfo` from the directive's view. This will allow us to take data from our directive's isolated scope and use it as the parameter to the `getInfo` function on the controller's scope. 
 
