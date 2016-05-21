@@ -6,24 +6,24 @@ categories: [NLog]
 tags: [NLog, .NET]
 ---
 
-NLog is an [open source](https://github.com/NLog/NLog) API for .NET that has rich logging functionality, making it easy to produce and manage logs for your application. 
+NLog is an [open source](https://github.com/NLog/NLog) API for .NET that has rich logging functionality, making it easy to create and manage logs for your application. We will go through the process of configuring NLog to log exceptions to a file on the local file system.
 
 ### Overview
 
 NLog lets you to combine messages and with contextual information (e.g. date/time, severity, thread, process, environment, etc.), format them according to your preference, and send them to one or more targets. These targets can include a file (covered in this post), Event Log, database, email, etc. There are a few simple steps to have NLog begin logging to a file:
 
-1. Install the `NLog` and `NLog Configuration` package into your project via NuGet in Visual Studio
+1. Install the `NLog` and `NLog.Config` package into your project via NuGet in Visual Studio
 2. Add a logging target to `NLog.config` (this file is added automatically when the NuGet packages are installed)
 3. Add a logger to `NLog.config` that utilizes the target you created
 4. Create a new `Logger` object and use the methods it provides
 
 ### Basic Example
 
-For our example we are going to configure NLog to log exceptions to a file. We could just as easily configure it to do trace logging, log warning messages, etc.
+For our simple example we are going to configure NLog to log exceptions to a file. We could just as easily configure it to do trace logging, log warning messages, etc.
 
 #### Install NuGet Packages
 
-The first thing we need to do is install the `NLog` and `NLog Configuration` packages into our project via NuGet. This will add the NLog library to the project references, as well as the NLog.config (and the corresponding XML schema NLog.xsd) that is used to configure NLog. 
+The first thing we need to do is install the `NLog` and `NLog.Config` packages into our project via NuGet. This will add the NLog library to the project references, as well as the NLog.config (and the corresponding XML schema NLog.xsd) that is used to configure NLog. 
 
 #### Configure Target and Logger
 
@@ -48,7 +48,7 @@ Additional Info: ${message}${newline}" />
  </targets>
 <rules>
 	<!-- local file logger -->
-	<logger minlevel="Error" maxlevel="Error" name="fileLogger" writeTo="file"/>
+	<logger level="Error" name="fileLogger" writeTo="fileTarget"/>
 </rules>
 ```
 
@@ -69,7 +69,7 @@ try
 catch (DivideByZeroException ex)
 {
     Logger logger = LogManager.GetLogger("fileLogger");
-    logger.ErrorException("Whoops!", ex);
+    logger.Error(ex, "Whoops!");
 }
 ```
 
@@ -87,6 +87,6 @@ Additional Info: Whoops!
 
 ### Final Thoughts
 
-* One thing that may seem strange is that if NLog itself has an exception, the logging will fail passively, you are not notified, and the unhandled exception is swallowed. This can be changed by adding the following attributes to the main `nlog` node in the NLog.config: `throwExceptions="true" internalLogFile="c:\path_to_file\internal_nlog_log.txt"`
+* One thing that may seem strange is that if NLog itself has an exception, the logging will fail passively, you are not notified, and the unhandled exception is swallowed. This can be changed by adding the following attributes to the main `nlog` node in the NLog.config: `throwExceptions="true" internalLogLevel="Error" internalLogFile="c:\path_to_file\internal_nlog_log.txt"`
 * One common mistake when using NLog is attempting to log a file to a location that the application does not have permission to write to. Be sure that the read/write permissions are set properly for where you want files to be created and written to.
 * NLog has features that allow for archiving of log files based on file size and/or number of log entries. This is done on a per target basis.
