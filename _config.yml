@@ -9,7 +9,7 @@
 title: Knight Codes
 email: cknightdevelopment@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Chris Knight's developer blog
+  A developer blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://knightcodes.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb

@@ -2,10 +2,13 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <h4>
+        {{ site.title }}
+        <small>{{ site.description }}</small>
+    </h2>
 
     <div class="footer-col-wrapper">
-      <div class="pull-left">
+      <div>
         <ul class="contact-list">
           <li>
             <a href="mailto:{{ site.email }}">
@@ -20,10 +23,6 @@
           </li>
           {% endif %}
         </ul>
-      </div>
-
-      <div class="pull-right">
-        {{ site.description }}
       </div>
     </div>
 
