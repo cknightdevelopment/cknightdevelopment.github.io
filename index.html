@@ -22,7 +22,7 @@ layout: default
           {% if post.tags.size > 0 %}
            • 
             {% for tag in post.tags %}
-            <span class="badge">{{ tag }}</span>
+            <span class="tag badge alert-info">{{ tag }}</span>
             {% endfor %}
           {% endif %}
           </small>
