@@ -4,6 +4,8 @@ title:  Logging To A File With NLog
 date:   2016-05-20 14:00:00 -0700
 categories: [NLog]
 tags: [NLog, .NET]
+githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master/DotNet/NLog.File
+youtubeId: NJiy2gV5upc
 ---
 
 NLog is an [open source](https://github.com/NLog/NLog) API for .NET that has rich logging functionality, making it easy to create and manage logs for your application. We will go through the process of configuring NLog to log exceptions to a file on the local file system.

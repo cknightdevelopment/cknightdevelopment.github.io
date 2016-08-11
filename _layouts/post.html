@@ -13,6 +13,14 @@ layout: default
     	 • 
     	{{ page.author }}
     	{% endif %}
+			{% if page.githubUrl %}
+				• 
+			<i class="fa fa-github" title="Has source code"></i>
+			{% endif %}
+			{% if page.youtubeId %}
+				• 
+			<i class="fa fa-youtube" title="Has YouTube video"></i>
+			{% endif %}
     	{% if page.tags.size > 0 %}
     	 • 
     	 	{% for tag in page.tags %}
@@ -22,6 +30,20 @@ layout: default
     	</small>
     </p>
   </header>
+
+	{% if page.githubUrl or page.youtubeId %}
+    	 <blockquote class="external-links">
+				 {% if page.githubUrl %}
+				 	{% include github.html %}
+				 {% endif %}
+				 
+				 {% if page.youtubeId %}
+				 	{% include youtube.html %}
+				 {% endif %}
+			</blockquote>
+	{% endif %}
+
+	
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}

@@ -19,6 +19,14 @@ layout: default
            • 
           {{ post.author }}
           {% endif %}
+          {% if post.githubUrl %}
+           • 
+          <i class="fa fa-github" title="Has source code"></i>
+          {% endif %}
+          {% if post.youtubeId %}
+           • 
+          <i class="fa fa-youtube" title="Has YouTube video"></i>
+          {% endif %}
           {% if post.tags.size > 0 %}
            • 
             {% for tag in post.tags %}
