@@ -17,6 +17,7 @@ github_username:  cknightdevelopment
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 defaults:
   -
