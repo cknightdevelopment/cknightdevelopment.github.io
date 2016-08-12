@@ -57,12 +57,17 @@
     border-width: 1px;
     border-style: solid;
     margin-top: -3px;
+    padding-top: 2px;
 }
 
 .text-muted {
     i.fa {
         font-size: 18px;
     }
+}
+
+code {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 

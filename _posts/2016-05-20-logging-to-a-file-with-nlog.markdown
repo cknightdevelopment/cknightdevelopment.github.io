@@ -33,7 +33,7 @@ There are tons of configuration settings available to you, all of which can be f
 
 _Note: this is only showing the 'targets' and 'rules' nodes of the NLog.config_
 
-```
+```xml
 <targets>
 	<!-- local file target -->
 	<target name="fileTarget"
@@ -62,7 +62,7 @@ The logger we created is named `fileLogger` and it will log messages that have t
 
 All we need to do now is write some .NET code that will use our configured target and logger. Create an instance of the `Logger` object provided by the NLog API and log an exception. Here is an example:
 
-```
+```c#
 try
 {
     int zero = 0;

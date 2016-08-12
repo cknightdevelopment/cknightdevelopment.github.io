@@ -36,7 +36,7 @@ _NOTE: The examples below are using the angular "controller as" syntax (learn ab
 
 The `PersonCtrl` controller sets three properties on the `person` object defined on it's scope: `firstName`, `lastName`, and `speak`.
 
-```
+```js
 angular.module("app")
     .controller("PersonCtrl", function () {
         var vm = this;
@@ -54,7 +54,7 @@ angular.module("app")
 
 The `moocher` directive has no scope of it's own and will use the scope of the view that contains it (`PersonCtrl` in our example). This scope is the `scope` parameter passed to the `link()` function on the directive. You don't have to do anything with this scope if you don't want (you don't even need to define a `link()` function at all). However, if you want to add data or behaviors to the scope from the directive, you can do something like what we are doing with `msgFromDirective`. The controller and all instances of the directive will share the same scope and their data will be in sync.
 
-```
+```js
 angular.module("app")
     .directive("moocher", function () {
        return {
@@ -71,7 +71,7 @@ angular.module("app")
 
 All the properties put on the scope by the `PersonCtrl` controller and all the properties added to the scope in the `link()` function of the directive will be available to the main view.
 
-```
+```html
 <h3>Controller</h3>
 <div class="well well-sm">
     <div class="form-inline">
@@ -102,7 +102,7 @@ All the properties put on the scope by the `PersonCtrl` controller and all the p
 
 (same story as the main view above)
 
-```
+```html
 <div>First Name: {% raw %}{{vm.person.firstName}}{% endraw %}</div>
 <div>Last Name: {% raw %}{{vm.person.lastName}}{% endraw %}</div>
 <div>{% raw %}{{vm.person.speak()}}{% endraw %}</div>
@@ -115,7 +115,7 @@ All the properties put on the scope by the `PersonCtrl` controller and all the p
 
 The `CarCtrl` controller sets three properties on the `car` object defined in it's scope: `make`, `model`, and `getInfo`.
 
-```
+```js
 angular.module("app")
     .controller("CarCtrl", function () {
         var vm = this;
@@ -133,7 +133,7 @@ angular.module("app")
 
 The `borrower` directive has a scope of its own provided by `BorrowerCtrl` and also inherits from the scope of the view that contains it (`CarCtrl` is our example). _This is accomplished by the `scope` on the directive being set to `true`_. The `BorrowerCtrl` adds a `year` property to the `car` object on it's scope.
 
-```
+```js
 angular.module("app")
     .directive("borrower", function () {
         return {
@@ -152,7 +152,7 @@ angular.module("app")
 
 The main view can access it's scope properties as usual, but cannot access the `year` property that the `borrower` directive added to it's own scope. The `{%raw%}{{vm.year}}{%endraw%}` will display nothing.
 
-```
+```html
 <h3>From Controller</h3>
 
 <div class="well well-sm">
@@ -189,7 +189,7 @@ The main view can access it's scope properties as usual, but cannot access the `
 
 The view for the `borrower` directive is able to access the `CarCtrl`'s scope properties via `vm`. The `BorrowerCtrl` scope to `borrowerVm`, which allows us to display the `year` property via `{% raw %}{{borrowerVm.car.year}}{% endraw %}`. Every instance of `borrower` will inherit the same scope from `CarCtrl`, but will get it's own scope from `BorrowerCtrl`. This mean that updates to `make` & `model` will effect the main view and all directive views, but changes to `year` will only effect that `BorrowerCtrl`'s scope & view.
 
-```
+```html
 <div ng-controller="BorrowerCtrl as borrowerVm">
     <div class="form-inline">
         <div class="form-group">
@@ -210,7 +210,7 @@ The view for the `borrower` directive is able to access the `CarCtrl`'s scope pr
 This `StereoCtrl` controller sets three properties on the `stereo` object defined in it's scope: `min`, `max`, and `getInfo`.
 
 #### Controller
-```
+```js
 angular.module("app")
     .controller("StereoCtrl", function () {
         var vm = this;
@@ -228,7 +228,7 @@ angular.module("app")
 
 The `loner` directive does not inherit any scope, but has it's own totally isolated scope provided by the `LonerCtrl`. _This is accomplished by the `scope` on the directive being set to `{}`_. The `LonerCtrl` defines it's own `min` & `max` scope properties on it's own `stereo` object, which will override the one on `StereoCtrl`.
 
-```
+```js
 angular.module("app")
     .directive("loner", function () {
         return {
@@ -248,7 +248,7 @@ angular.module("app")
 
 Nothing special here, just basic model binding that we have already seen.
 
-```
+```html
 <h3>From Controller</h3>
 
 <div class="well well-sm">
@@ -284,7 +284,7 @@ Nothing special here, just basic model binding that we have already seen.
 
 The `loner` directive view will use the scope provided by the `LonerCtrl`. It defines it's own `stereo` object with `min` & `max` scope properties with different values than the ones on `StereoCtrl`. Each instance of the `loner` directive will get its own isolated version of the `LonerCtrl`. This means that if you change the `min` or  `max` on a directive it will not effect any of the other instances of the directive.
 
-```
+```html
 <div ng-controller="LonerCtrl as vm">
     <div class="form-inline">
         <div class="form-group">
@@ -309,7 +309,7 @@ The `loner` directive view will use the scope provided by the `LonerCtrl`. It de
 
 The `IceCreamCtrl` controller sets three properties on the `iceCream` object in it's scope: `min`, `max`, and `getInfo`. An `alertText` function property is also set on the scope that will simply alert whatever text it receives in it's parameter.
 
-```
+```js
 angular.module("app")
     .controller("IceCreamCtrl", function () {
         var vm = this;
@@ -334,7 +334,7 @@ This is where things get fun! The `negotiator` directive has it's own scope, but
 * `=` = two-way
 * `&` = function/expression binding
 
-```
+```js
 angular.module("app")
     .directive("negotiator", function () {
         return {
@@ -363,7 +363,7 @@ The only new stuff going on in this view is the `<negotiator>` elements at the b
 
 One important thing to see is the `vm.alert(blah)` we are setting to the `alert-text` attribute. What is that `blah` all about? It is the name of the property we are going to use in our call to `getInfo` from the directive's view. This will allow us to take data from our directive's isolated scope and use it as the parameter to the `getInfo` function on the controller's scope. 
 
-```
+```html
 <h3>From Controller</h3>
 
 <div class="well well-sm">
@@ -405,7 +405,7 @@ One important thing to see is the `vm.alert(blah)` we are setting to the `alert-
 
 Most of what we see in this view is stuff we have seen before; binding to properties on the directive's scope. The one thing to point out is the `ng-click="soundTheAlarm({blah: message})"`. As we mentioned above, `blah` is the name of property we are using to allow us to pass in data from our directive's isolated scope as the parameter to the `alertText` method on the controller's scope.
 
-```
+```html
 <div class="well well-sm">
     <div class="form-inline">
         <div class="form-group">
