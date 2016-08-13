@@ -20,6 +20,9 @@ repository: cknightdevelopment/cknightdevelopment.github.io
 markdown: kramdown
 highlighter: rouge
 
+gems:
+  - jekyll-sitemap
+
 defaults:
   -
     scope:
