@@ -2,7 +2,7 @@
 layout: post
 title:  Jekyll with GitHub Pages on Windows
 date:   2016-04-25 14:00:00 -0700
-categories: [General]
+categories: [Miscellaneous]
 tags: [Jekyll, GitHub Pages]
 ---
 
