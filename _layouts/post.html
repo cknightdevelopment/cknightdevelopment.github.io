@@ -9,10 +9,6 @@ layout: default
     <p class="text-muted post-basic-info">
     	<small datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
 		{{ page.date | date: "%b %-d, %Y" }}
-    	{% if page.author %}
-    	 • 
-    	{{ page.author }}
-    	{% endif %}
 			{% if page.githubUrl %}
 				• 
 			<i class="fa fa-github" title="Has source code"></i>

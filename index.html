@@ -15,10 +15,6 @@ layout: default
         <div class="text-muted">
           <small datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ post.date | date: "%b %-d, %Y" }}
-          {% if post.author %}
-           • 
-          {{ post.author }}
-          {% endif %}
           {% if post.githubUrl %}
            • 
           <i class="fa fa-github" title="Has source code"></i>

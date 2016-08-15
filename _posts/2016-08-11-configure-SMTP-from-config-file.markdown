@@ -2,7 +2,7 @@
 layout: post
 title:  Read SMTP Settings From Configuration File
 date:   2016-08-11 14:00:00 -0700
-categories: [SMTP, .NET]
+categories: [.NET]
 tags: [SMTP, .NET]
 githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master/DotNet/Smtp.Configuration
 youtubeId: IcJhYsUikRc

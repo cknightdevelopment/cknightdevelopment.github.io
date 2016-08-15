@@ -2,7 +2,7 @@
 layout: post
 title:  Logging To A File With NLog
 date:   2016-05-20 14:00:00 -0700
-categories: [NLog]
+categories: [.NET]
 tags: [NLog, .NET]
 githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master/DotNet/NLog.File
 youtubeId: NJiy2gV5upc
