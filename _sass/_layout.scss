@@ -2,10 +2,12 @@
 * CHRIS CHANGES
 */
 
-.no-space-bottom {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
+.post-list{
+    h3 {
+        margin-top: 0;
+        margin-bottom: 7px;
+    }
+} 
 
 .post-header {
     h2 {
