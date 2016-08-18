@@ -22,6 +22,10 @@
         border-bottom: 1px solid #e8e8e8;
         color: darken($brand-color, 5%);
     }
+
+    h4 {
+        margin-top: 20px;
+    }
 }
 
 @media (min-width: 768px) {
