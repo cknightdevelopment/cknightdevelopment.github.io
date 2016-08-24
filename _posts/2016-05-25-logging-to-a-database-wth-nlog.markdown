@@ -174,4 +174,4 @@ catch (DivideByZeroException ex)
 
 If all went well a row should have been inserted into the `dbo.Logs` table with the exception data. 
 
-<img id="nlog-database-result" src="/assets/images/nlog-database-result.png" alt="NLog database result" /> 
+<img id="nlog-database-result" src="/assets/images/nlog-database-result.jpg" alt="NLog database result" /> 
