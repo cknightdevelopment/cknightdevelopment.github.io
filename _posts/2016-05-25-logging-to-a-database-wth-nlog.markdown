@@ -8,22 +8,22 @@ githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master
 youtubeId: N9qioGSSzes
 ---
 
-Expanding upon my previous post [Logging To A File With NLog](http://knightcodes.com/.net/2016/05/20/logging-to-a-file-with-nlog.html){:target="_blank"}, updating our configuration to have NLog log to a database is easy. If you have not already seen that post, please give that a read before continuing on. Otherwise let’s get started. 
+Expanding upon my previous post [Logging To A File With NLog](http://knightcodes.com/.net/2016/05/20/logging-to-a-file-with-nlog.html){:target="_blank"}, updating our configuration to have NLog log to a database is easy. If you have not already seen that post, please give it a read before continuing on. Otherwise let’s get started. 
 
 ### Overview
 
-There are a few simple steps to have NLog begin logging to a database (very similar to logging to a file):
+There are a few steps to have NLog begin logging to a database (very similar to logging to a file):
 
-1. Install the `NLog` and `NLog.Config` package into your project via NuGet in Visual Studio
+1. Install the `NLog` and `NLog.Config` package into our project via NuGet in Visual Studio
 2. Add a connection string to our configuration file for the database we want to connect to
 3. Create the table that will hold our exception data and the stored procedure NLog will call to insert the exception data
 4. Add a logging target to `NLog.config` (this file is added automatically when the NuGet packages are installed)
-5. Add a logger to `NLog.config` that utilizes the target you created
+5. Add a logger to `NLog.config` that utilizes the target we created
 6. Create a new `Logger` object and use the methods it provides
 
 ### Basic Example
 
-For our example we are going to configure NLog to log exceptions to a database table using a stored procedure. We could just as easily configure it to do trace logging, log warning messages, etc., but this will give us a basic understanding.
+For our example we are going to configure NLog to log exceptions to a database table using a stored procedure. We could just as easily configured it to perform trace logging, log warning messages, etc., but this will give us a basic understanding.
 
 #### Install NuGet Packages
 
@@ -31,7 +31,7 @@ The first thing we need to do is install the `NLog` and `NLog.Config` packages i
 
 #### Add Connection String
 
-Now we need to add a connection string to our configuration file for the database that we want to connect to. There is nothing special about this connection string, however take note of the `name` attribute because we will make reference to it later. In our example it is named `NLog`:
+Now we need to add a connection string to our configuration file (e.g. `app.config`) for the database that we want to connect to. There is nothing special about this connection string, however take note of the `name` attribute because we will make reference to it later. In our example it is named `NLog`:
 
 ```xml
 <connectionStrings>
@@ -147,13 +147,13 @@ _Note: this is only showing the `targets` and `rules` nodes of the `NLog.config`
 </rules>
 ```
 
-The target we created is named `database` with a target type of `Database`. We provide `NLog` as the name of the connection string that we want it to use (added in a previous step) and tell it to execute our stored procedure as it's command text. The parameter data that is used when the stored procedure gets called is provided by the `<parameter>` nodes, which we set to NLog exception properties. Refer to the [NLog project site](http://nlog-project.org/){:target="_blank"} for specifics on these properties.
+The target we created is named `database` with a target type of `Database`. We provide `NLog` as the name of the connection string that we want it to use (added in a previous step) and tell it to execute our stored procedure as it's command text. The parameter data used when the stored procedure gets called is provided by the `<parameter>` nodes, which we set to NLog exception properties. Refer to the [NLog project site](http://nlog-project.org/){:target="_blank"} for specifics on these properties.
 
 The logger we created is named `databaseLogger` and it will log messages that have the logging severity level of `Error`, `Warn`, or `Fatal` (NLog severity levels from least to greatest are `Trace`, `Debug`, `Info`, `Warn`, `Error`, and `Fatal`). Our logger will use the `database` target that we added.
 
 #### .NET Code
 
-All we need to do now is write some .NET code that will use our configured target and logger. Create an instance of the `Logger` object provided by the NLog API by calling `LogManager.GetLogger()` and specifying that we want to use our new `databaselogger`.
+All we need to do now is write some .NET code that will use our configured target and logger. Create an instance of the `Logger` object provided by the NLog API by calling `LogManager.GetLogger()` and specifying that we want to use our new `databaseLogger` logger.
 
 ```c#
 try
@@ -173,3 +173,5 @@ catch (DivideByZeroException ex)
 ```
 
 If all went well a row should have been inserted into the `dbo.Logs` table with the exception data. 
+
+<img id="nlog-database-result" src="/assets/images/nlog-database-result.png" alt="NLog database result" /> 
