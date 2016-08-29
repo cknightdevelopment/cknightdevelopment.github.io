@@ -5,7 +5,7 @@ date:   2016-08-29 01:00:00 -0700
 categories: [posh-git]
 tags: [PowerShell, posh-git, .NET]
 githubUrl: 
-youtubeId: 
+youtubeId: PNNinzeFv-4
 ---
 
 Now-a-days Windows developers increasingly need to get their hands dirty using the terminal (gasp!). Whether we're executing some weird JavaScript build, spinning up a server in the cloud, calling npm, etc., the command line is becoming a more prominent part of our daily development lives. What are we to do when we are so used to the "Visual Studio-lization" of everything from our coding editing, to our source control, to our builds, etc.. Never fear! Behind all those fancy GUIs are a rich and powerful set of CLIs that are really not all that scary, and can actually make our development process _faster_. One area that you may, dare I say it, become a lover of the terminal is with source control. This is particularly true if you are using Git. Introducing [posh-git](https://github.com/dahlbyk/posh-git){:target="_blank"}!
