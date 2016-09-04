@@ -6,11 +6,11 @@ categories: [Miscellaneous]
 tags: [PowerShell, .NET]
 ---
 
-As we all know Visual Studio is an amazing IDE. It's crazy powerful, has an enormous feature set, and makes developers lives better. However, one area where using Visual Studio can sometimes be a drag is when you just want to do a quick build of your solution or project. Depending on how large your solution is and what your build steps are like it can take up to several minutes to complete (or Visual Studio may even crash on you!). **This gets old really quick.** This is especially true if you need to build often while as you work to fix a bug, or if you just want to do a build after pulling in changes from GitHub to make sure everything is okay before pushing. Some simple PowerShell can help us out here!
+As we all know Visual Studio is an amazing IDE. It's crazy powerful, has an enormous feature set, and makes developers lives better. However, one area where using Visual Studio can sometimes be a drag is when you just want to do a quick build of your solution or project. Depending on how large your solution is and what your build steps are like it can take up to several minutes to complete (or Visual Studio may even crash on you!). **This gets old really quick.** This is especially true if you need to build often while you are fixing a bug, or if you just want to do a build after pulling in changes from GitHub to make sure everything is okay before pushing. Some simple PowerShell can help us out here!
 
 ### Overview
 
-Underneath Visual Studio's build functionality is the `MSBuild.exe`, which it calls out to with various parameters to get it's work done. This same executable is added to our file path when Visual Studio is installed, so we can make use of it in PowerShell. We can create a super simple PowerShell function to build a solution or project using `MSBuild.exe`, and even perform a NuGet package restore.
+Visual Studio's build functionality is built (pun intended) on top of `MSBuild.exe`, which it calls out to with various parameters to get it's work done. This same executable is added to our system file path when Visual Studio is installed, so we can make use it in PowerShell to perform our own builds. We can create a simple PowerShell function to build a solution or project using `MSBuild.exe` and even perform NuGet package restores.
 
 First, go ahead and install the NuGet CLI (command line interface). See the 'Installing' section of the [NuGet documentation](https://docs.nuget.org/consume/command-line-reference) for instructions on how to get it set up. It is really easy and there are a number of different options.
 
