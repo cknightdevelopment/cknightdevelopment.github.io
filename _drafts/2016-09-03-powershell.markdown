@@ -10,11 +10,11 @@ As we all know Visual Studio is an amazing IDE. It’s crazy powerful, has an en
 
 ### Overview
 
-Visual Studio's build functionality is built (pun intended) on top of `MSBuild.exe` ([see the documentation](https://msdn.microsoft.com/en-us/library/ms164311.aspx)), which it calls out to with various parameters to get it's work done. This same executable is added to your system file path when Visual Studio is installed, so you can make use it in PowerShell to perform your own builds. We can create a simple PowerShell function to build a solution or project using `MSBuild.exe` and even perform NuGet package restores.
+Visual Studio's build functionality is built (pun intended) on top of `MSBuild.exe` ([see the documentation](https://msdn.microsoft.com/en-us/library/ms164311.aspx){:target="_blank"}), which it calls out to with various parameters to get it's work done. This same executable is added to your system file path when Visual Studio is installed, so you can make use it in PowerShell to perform your own builds. We can create a simple PowerShell function to build a solution or project using `MSBuild.exe` and even perform NuGet package restores.
 
 ### Install NuGet CLI
 
-Go ahead and install the NuGet CLI (command line interface). See the 'Installing' section of the [NuGet documentation](https://docs.nuget.org/consume/command-line-reference) for instructions on how to get it set up. It is really easy and there are a number of different ways to do it.
+Go ahead and install the NuGet CLI (command line interface). See the 'Installing' section of the [NuGet documentation](https://docs.nuget.org/consume/command-line-reference){:target="_blank"} for instructions on how to get it set up. It is really easy and there are a number of different ways to do it.
 
 ### Setup & Understand the PowerShell Function
 
@@ -82,6 +82,6 @@ buildVS -path .\path\to\solution.sln -clean $false
 # etc.
 ```
 
-When you run the function you will see a bunch of output from `MSBuild.exe`, and if any errors are encountered they will be in red. At the end of the build step there will be a summary with any warnings or errors that occurred during the build.
+When you execute the function you will see a bunch of output from `MSBuild.exe`, and if any errors are encountered they will be in red. At the end of the build step there will be a summary with any warnings or errors that occurred during the build.
 
 I use this function throughout my work day and it makes me much more productive. I no longer need to open Visual Studio, wait for my solution to load, clean, build, etc. I just execute the `buildVS` function and I am done. 
