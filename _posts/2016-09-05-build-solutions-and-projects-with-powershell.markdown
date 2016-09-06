@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  Build Visual Studio Solutions and Projects With PowerShell
-date:   2016-09-03 12:00:00 -0700
+title:  Build Solutions and Projects With PowerShell
+date:   2016-09-05 12:00:00 -0700
 categories: [Miscellaneous]
-tags: [PowerShell]
+tags: [PowerShell, Visual Studio]
 ---
 
 As we all know Visual Studio is an amazing IDE. It’s crazy powerful, has an enormous feature set, and makes developers lives better. However, one area where using Visual Studio can sometimes be a drag is when you just want to do a quick build of your solution or project. Depending on how large your code base is and what your build steps look like, it can take up to several minutes to complete or Visual Studio may even crash on you. **This gets old really quick**, especially if the whole IDE doesn’t need to be open with all its bells and whistles to do what you are wanting to accomplish. For example, I often want to do a build after pulling from GitHub just to make sure everything is okay before pushing my local commits. Some very simple PowerShell can help us out here!
 
 ### Overview
 
-Visual Studio's build functionality is built (pun intended) on top of `MSBuild.exe` ([see the documentation](https://msdn.microsoft.com/en-us/library/ms164311.aspx){:target="_blank"}), which it calls out to with various parameters to get it's work done. This same executable is added to your system file path when Visual Studio is installed, so you can make use it in PowerShell to perform your own builds. We can create a simple PowerShell function to build a solution or project using `MSBuild.exe` and even perform NuGet package restores.
+Visual Studio's build functionality is built (pun intended) on top of `MSBuild.exe` ([see the documentation](https://msdn.microsoft.com/en-us/library/ms164311.aspx){:target="_blank"}), which it calls out to with various parameters to get it's work done. We can use this same executable in PowerShell to perform your own builds. We will create a simple PowerShell function to build a solution or project using `MSBuild.exe` and even perform NuGet package restores.
 
 ### Install NuGet CLI
 
@@ -36,6 +36,8 @@ function buildVS
     )
     process
     {
+        $msBuildExe = 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
+
         if ($nuget) {
             Write-Host "Restoring NuGet packages" -foregroundcolor green
             nuget restore "$($path)"
@@ -52,9 +54,13 @@ function buildVS
 }
 ``` 
 
-Pretty simple right? You provide `buildVS` with a file path to a Visual Studio solution or project file, and optionally tell it to restore the NuGet packages and/or clean the solution/project before performing the build (both are `true` by default). But how do you use it? Easy! Just add it to your PowerShell profile. 
+Pretty simple right? We declare a variable named `$msBuildExe` and set it equal to the full file path of where Visual Studio installs the `MSBuild.exe` (by default). The `buildVS` function takes three parameters:
 
-If you do not already have a PowerShell profile follow these steps:
+- `path` = relative file path to a Visual Studio solution or project file
+- `nuget` = restore NuGet packages (optional, default is true)
+- `clean` = clean the solution/project before performing the build (optional, default is true)
+
+But how do you call it? First, add the `buildVS` function to your PowerShell profile. If you do not already have a PowerShell profile then follow these steps:
 
 1. Open a PowerShell console
 2. Run `$PROFILE`
