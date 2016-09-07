@@ -4,6 +4,7 @@ title:  Build Solutions and Projects With PowerShell
 date:   2016-09-05 12:00:00 -0700
 categories: [Miscellaneous]
 tags: [PowerShell, Visual Studio]
+githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master/Miscellaneous/Build%20Solutions%20and%20Projects%20With%20PowerShell
 youtubeId: 2Ngvr79QbsU
 ---
 
