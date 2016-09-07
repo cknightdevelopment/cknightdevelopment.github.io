@@ -4,6 +4,7 @@ title:  Build Solutions and Projects With PowerShell
 date:   2016-09-05 12:00:00 -0700
 categories: [Miscellaneous]
 tags: [PowerShell, Visual Studio]
+youtubeId: 2Ngvr79QbsU
 ---
 
 As we all know Visual Studio is an amazing IDE. It’s crazy powerful, has an enormous feature set, and makes developers lives better. However, one area where using Visual Studio can sometimes be a drag is when you just want to do a quick build of your solution or project. Depending on how large your code base is and what your build steps look like, it can take up to several minutes to complete or Visual Studio may even crash on you. **This gets old really quick**, especially if the whole IDE doesn’t need to be open with all its bells and whistles to do what you are wanting to accomplish. For example, I often want to do a build after pulling from GitHub just to make sure everything is okay before pushing my local commits. Some very simple PowerShell can help us out here!
