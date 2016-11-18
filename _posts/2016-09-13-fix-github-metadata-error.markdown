@@ -23,7 +23,7 @@ Regenerating: 1 file(s) changed at 2016-09-13 13:10:58    GitHub Metadata: No Gi
 
 Initially the site would generate and be served successfully, but if I made any edits I would get the error in my terminal and my edits wouldn't be served. This means every time I made a change and wanted to see what it looked like, I would have to terminate the Jekyll process and have it regenerate the site all over again. So annoying!
 
-### Fit It!
+### Fix It!
 
 Alas, after much searching I found a fix. Just follow these steps:
 
