@@ -8,24 +8,24 @@ githubUrl:
 youtubeId:
 ---
 
-ASP.NET MVC has powerful routing capabilities. Angular 2 has powerful routing capabilities. But, how can I get them to place nicely together? This question quickly becomes important if you are using the [Angular 2 `PathLocationStrategy`, the default HTML 5 pushState style of routing](https://angular.io/docs/ts/latest/guide/router.html#!#browser-url-styles){:target="_blank"}. Several issues can quickly arise as you try to reconcile your client-side routes with your server-side routes.
+Both ASP.NET MVC and Angular 2 have powerful routing functionality. However, getting them to play nicely together can sometimes be a struggle? This quickly becomes apparent when using the [Angular 2 router's `PathLocationStrategy`, its default HTML 5 style of routing](https://angular.io/docs/ts/latest/guide/router.html#!#browser-url-styles){:target="_blank"}, and trying to reconcile your client-side and server-side routes.
 
 
 ### The Problem
 
-When using the `PathLocationStrategy` for your Angular 2 routing the router will compose a _natural URL_ instead of a _hash URL_. 
+When using the `PathLocationStrategy` the router will compose a _natural URL_ instead of the traditional _hash URL_ that Angular 1 would compose. Here's the difference:
 
-So, when going to a "Contact List" page the _natural URL_ would look like this:
+_Natural URL_:
 
-`http://yoursite.com/contact/list` 
+* `http://yoursite.com/contact/list` 
 
-Instead of a _hash URL_ that would look like this: 
+_Hash URL_
 
-`http://yoursite.com/#/contact/list`
+* `http://yoursite.com/#/contact/list`
 
-Back when using Angular 1 (or if you decided to use the Angular 2 `HashLocationStrategy`) your client-side routes wouldn't ever conflict with your server-side routes because of the existance of the `#` (which Angular 1 required) in the URL. But now with HTML5 Angular 2 no longer requires the `#` to be in the URL, so our server-side router gets confused. 
+Back when using Angular 1 (or if you decide to use the Angular 2 `HashLocationStrategy` instead) your client-side routes wouldn't ever conflict with your server-side routes because of the existence of the `#` in the URL. But now with HTML5 Angular 2 no longer requires the `#` to be in the URL, so our server-side router gets confused. 
 
-In our "Contact List" example above the ASP.NET MVC router would look for a `List` action method in a `Contact` controller. Is this what we want? Well ... maybe. We might want ASP.NET MVC to serve a specific Razor templated page, but we might want the Angular 2 router to be used to take us to a specific view. Or maybe something completely different. The point is that the server-side router doesn't know, so we have to tell it what we want it to do.
+In our "Contact List" example above the ASP.NET MVC router would look for a `List` action method in a `Contact` controller. Is this what we want? Well ... maybe. We might want ASP.NET MVC to serve a specific Razor template, but we might want the Angular 2 router to be used to take us to a specific view. Or maybe something completely different. The point is that the server-side router doesn't know, so we have to tell it what we want it to do.
 
 ### The Solution
 
