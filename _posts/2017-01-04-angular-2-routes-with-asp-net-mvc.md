@@ -56,9 +56,10 @@ We can now add a constraint to our route definition(s). In the example below we 
 
 The next route definition named "angular" is a catch-all route (`{*url}` matches anything) and will use whatever default controller & action we tell it to. This should be set to the view where you bootstrap your Angular 2 app. What this means is that the ASP.NET MVC router will not try to find a `List` action method on a `Contact` controller, but rather it will end up passing it on to the Angular router.
 
-<div class="alert alert-info" role="alert">
-<strong>NOTE:</strong> Be sure to add the catch-all "angular" route definition after all of your other route definitions!
-</div>
+{% include alert.html 
+    type="info" 
+    text="Be sure to add the catch-all angular route definition after all of your other route definitions!" 
+%}
 
 ```csharp
 public static void RegisterRoutes(RouteCollection routes)
@@ -90,7 +91,7 @@ public static void RegisterRoutes(RouteCollection routes)
 }
 ```
 
-The nice thing about the `ServerRouteConstraint` is that you can decide whatever logic you want to determine if a URL is for a server-side route. Maybe for your Angular 2 route setup all your routes start with `/app/`. In that case the delegate you pass to `ServerRouteConstraint` could be something like this:
+The nice thing about the `ServerRouteConstraint` is that you can implement whatever logic you want to determine if a URL is for a server-side route. Maybe for your Angular 2 route setup all your routes start with `/app/`. In that case the delegate you pass to `ServerRouteConstraint` could be something like this:
 
 ```csharp
 url =>

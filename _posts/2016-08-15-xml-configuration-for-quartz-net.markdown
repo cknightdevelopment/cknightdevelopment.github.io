@@ -10,9 +10,10 @@ youtubeId: fJlg-T6WpSM
 
 Quartz.NET jobs, triggers, and schedules can be configured in several different ways. One great way to configure these items is in an XML file. Fortunately, Quartz.NET provides an XML schema definition file that can be utilized to assist us in creating an XML file to configure these items according to their specifications.
 
-<div class="alert alert-info" role="alert">
-<strong>NOTE:</strong> This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject.
-</div>
+{% include alert.html 
+    type="info" 
+    text="This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject." 
+%}
 
 ### Overview
 

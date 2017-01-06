@@ -10,9 +10,10 @@ youtubeId: RlW4vUsoxEY
 
 Quartz.NET is a full-featured, [open source](https://github.com/quartznet/quartznet){:target="_blank"} job scheduling system that can be used from the smallest apps to large scale enterprise systems (stole this from the their home page). However, one common pain point when using Quartz.NET is configuring dependency injection (DI) for their jobs. 
 
-<div class="alert alert-info" role="alert">
-<strong>NOTE:</strong> This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject.
-</div>
+{% include alert.html 
+    type="info" 
+    text="This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject." 
+%}
 
 ### Overview
 

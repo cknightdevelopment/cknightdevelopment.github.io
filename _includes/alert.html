@@ -1,0 +1,20 @@
+{% if include.type == "info" %}
+    {% assign wrapperClass = "info" %}
+    {% assign iconClass = "info-circle" %}
+{% elsif include.type == "warning" %}
+    {% assign wrapperClass = "warning" %}
+    {% assign iconClass = "exclamation-triangle" %}
+{% elsif include.type == "success" %}
+    {% assign wrapperClass = "success" %}
+    {% assign iconClass = "check-circle" %}
+{% elsif include.type == "danger" %}
+    {% assign wrapperClass = "danger" %}
+    {% assign iconClass = "times-circle" %}
+{% else %}
+    {% assign wrapperClass = "info" %}
+    {% assign iconClass = "info-circle" %}
+{% endif %}
+
+<div class="alert alert-{{ wrapperClass }}" role="alert">
+    <i class="fa fa-{{ iconClass }}"></i> {{ include.text }}
+</div>

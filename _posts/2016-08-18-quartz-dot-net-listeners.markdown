@@ -10,9 +10,10 @@ youtubeId: gVh8vjDIhUY
 
 One thing that can be really powerful when using Quartz.NET is executing some code whenever a particuar action takes place (think events). Quartz.NET has the concept of `listeners` to do just this! There are three types of listeners available: job listeners, trigger listeners, and scheduler listeners. These listeners can be used in many different scenarios such as logging, debugging issues, raising notifications, etc.
 
-<div class="alert alert-info" role="alert">
-<strong>NOTE:</strong> This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject.
-</div>
+{% include alert.html 
+    type="info" 
+    text="This post assumes that you already have a basic working knowledge of Quartz.NET and Ninject." 
+%}
 
 ### Overview
 
