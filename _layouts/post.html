@@ -27,16 +27,16 @@ layout: default
     </p>
   </header>
 
-	{% if page.githubUrl or page.youtubeId %}
-    	 <blockquote class="external-links">
-				 {% if page.githubUrl %}
-				 	{% include github.html %}
-				 {% endif %}
-				 
-				 {% if page.youtubeId %}
-				 	{% include youtube.html %}
-				 {% endif %}
-			</blockquote>
+	{% if page.githubUrl %}
+	<blockquote class="external-links">
+		{% include github.html %}
+	</blockquote>
+	{% endif %}
+
+	{% if page.youtubeId %}
+	<blockquote class="external-links">
+			{% include youtube.html %}
+	</blockquote>
 	{% endif %}
 
 	
