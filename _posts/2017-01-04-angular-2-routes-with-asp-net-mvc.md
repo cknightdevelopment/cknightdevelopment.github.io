@@ -5,7 +5,7 @@ date:   2017-01-04 20:00:00 -0700
 categories: [Angular2]
 tags: [Angular2, Routing, .NET]
 githubUrl: https://github.com/cknightdevelopment/KnightCodesExamples/tree/master/DotNet/Angular2RoutesWithMvc
-youtubeId: https://youtu.be/4keNnVxOh_M
+youtubeId: 4keNnVxOh_M
 ---
 
 Angular 2 and ASP.NET MVC both have powerful routing functionality. However, getting them to play nicely together can sometimes be a struggle. This quickly becomes apparent when using the [Angular 2 router's `PathLocationStrategy`, its default HTML 5 style of routing](https://angular.io/docs/ts/latest/guide/router.html#!#browser-url-styles){:target="_blank"}, and trying to reconcile your client-side and server-side routes.
