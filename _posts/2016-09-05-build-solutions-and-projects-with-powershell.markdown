@@ -56,6 +56,11 @@ function buildVS
 }
 ``` 
 
+{% include alert.html 
+    type="warning" 
+    text='As of Visual Studio 2017 the default location for the MS Build executable has changed to "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\msbuild.exe"'
+%}
+
 Pretty simple right? We declare a variable named `$msBuildExe` and set it equal to the full file path of where Visual Studio installs the `MSBuild.exe` (by default). The `buildVS` function takes three parameters:
 
 - `path` = relative file path to a Visual Studio solution or project file
