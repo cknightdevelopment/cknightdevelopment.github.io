@@ -39,7 +39,7 @@
     margin-bottom: 0;
     
     &.navbar-default {
-        background-color: white;
+        background-color: #F5F5F5;
     }
 }
 
@@ -93,6 +93,7 @@ blockquote {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    background-color: #F5F5F5;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -105,7 +106,7 @@ blockquote {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
     text-align: center;
-    background-color: white;
+    background-color: #F5F5F5;
 }
 
 .footer-heading {
