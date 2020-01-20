@@ -8,7 +8,7 @@ tags: [CoverT, JavaScript]
 
 Numeric separators allow adding underscores to numeric literals to make them more readable.
 
-### Numeric Separators
+### Examples
 
 Looks like you can add numeric separators anywhere in a string literal except as the first character, last character, right after a negative, or next to a decimal point.
 
