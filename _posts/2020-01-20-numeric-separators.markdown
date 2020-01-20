@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CoverT Day 1 - Numeric Separators
+title:  CoverT Day #1 - Numeric Separators
 date:   2020-01-20 00:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]
