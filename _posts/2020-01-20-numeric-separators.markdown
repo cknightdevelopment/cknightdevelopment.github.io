@@ -18,15 +18,9 @@ Looks like you can add numeric separators anywhere in a string literal except as
 %}
 
 ```javascript
-const myFunc = (test) => {
-  return { 
-    name: test.toLowerCase(),
-    age: 31
-  };
-};
-let huh = 1000000;
-let oh_i_see = 1_000_000;
-let oh_i_see_with_decimals = 1_000_000.00_00;
+let hard_to_read = 1000000;
+let oh_now_i_see = 1_000_000;
+let oh_now_i_see_with_decimals = 1_000_000.00_00;
 
 let nope1 = _100; // Error: _100 is not defined
 let nope2 = -_1; // Error: _1 is not defined
