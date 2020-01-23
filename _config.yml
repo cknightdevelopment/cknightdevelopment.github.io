@@ -7,12 +7,16 @@
 
 # Site settings
 title: Knight Codes
+tagline: Chris Knight's developer blog
 email: cknightdevelopment@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A developer blog
+  Chris Knight's developer blog
+social:
+  name: Chris Knight
+  links:
+    - https://github.com/cknightdevelopment
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://knightcodes.com" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
 github_username:  cknightdevelopment
 repository: cknightdevelopment/cknightdevelopment.github.io
 
@@ -22,6 +26,7 @@ highlighter: rouge
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 defaults:
   -
