@@ -12,7 +12,7 @@ There are ton of different effects you can apply, but the most popular is likely
 
 [StackBlitz example](https://stackblitz.com/edit/covert-backdrop-filter)
 
-<img src="/assets/images/backdrop-filter-example.png" alt="backdrop-filter example" /> 
+<img height="536px" src="/assets/images/backdrop-filter-example.png" alt="backdrop-filter example" /> 
 
 ```html
 <div id="parent">
