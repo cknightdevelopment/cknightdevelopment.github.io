@@ -30,7 +30,7 @@ div#parent {
 }
 
 div#child {
-  // Apply the backdrop-filter to effect the area "behind" it (e.g. the parent)
+  /* Apply the backdrop-filter to effect the area "behind" it (e.g. the parent) */
   backdrop-filter: blur(2px);
   
   padding: 20px;
