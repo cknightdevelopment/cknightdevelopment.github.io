@@ -173,6 +173,12 @@ blockquote {
     border-left-color: #4580C0;
 }
 
-.external-links:not(:last-of-type) {
-    margin-bottom: 10px;
+.external-links {
+    i {
+        margin-right: 10px;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
 }

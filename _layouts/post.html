@@ -13,6 +13,10 @@ layout: default
 				• 
 			<i class="fa fa-github" title="Has source code"></i>
 			{% endif %}
+			{% if page.stackblitzUrl %}
+				• 
+			<i class="fa fa-file-code-o" title="Has interactive code example"></i>
+			{% endif %}
 			{% if page.youtubeId %}
 				• 
 			<i class="fa fa-youtube" title="Has YouTube video"></i>
@@ -30,6 +34,12 @@ layout: default
 	{% if page.githubUrl %}
 	<blockquote class="external-links">
 		{% include github.html %}
+	</blockquote>
+	{% endif %}
+
+	{% if page.stackblitzUrl %}
+	<blockquote class="external-links">
+		{% include stackblitz.html %}
 	</blockquote>
 	{% endif %}
 
