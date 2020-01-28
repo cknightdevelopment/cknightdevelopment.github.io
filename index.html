@@ -19,6 +19,10 @@ layout: default
            • 
           <i class="fa fa-github" title="Has source code"></i>
           {% endif %}
+          {% if page.stackblitzUrl %}
+            • 
+          <i class="fa fa-file-code-o" title="Has interactive code example"></i>
+          {% endif %}
           {% if post.youtubeId %}
            • 
           <i class="fa fa-youtube" title="Has YouTube video"></i>
