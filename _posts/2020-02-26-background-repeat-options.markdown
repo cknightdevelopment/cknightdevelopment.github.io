@@ -37,7 +37,7 @@ Here are a few useful options according to [Mozilla...](https://developer.mozill
   width: 300px;
   border: 1px solid black;
   background-image: url('dot.png');
-  background-color: yellow;
+  background-color: grey;
 }
 
 .no-repeat {
