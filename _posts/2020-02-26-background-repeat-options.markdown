@@ -4,6 +4,7 @@ title:  "CoverT Day 21: background-repeat Options"
 date:   2020-02-26 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]
+stackblitzUrl: https://stackblitz.com/edit/covert-background-repeat?file=style.css
 ---
 
 The `background-repeat` property sets how background images are repeated. There are several options, each offering a slightly different result.
