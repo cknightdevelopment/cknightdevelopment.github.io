@@ -12,10 +12,7 @@ Numeric separators allow adding underscores to numeric literals to make them mor
 
 Looks like you can add numeric separators anywhere in a string literal except as the first character, last character, right after a negative, or next to a decimal point.
 
-{% include alert.html 
-    type="info" 
-    text="Please excuse any wacky syntax highlighting, they don't always do the best with new features..." 
-%}
+{% include syntax-highlighting-warning.html %}
 
 ```javascript
 let hard_to_read = 1000000;
