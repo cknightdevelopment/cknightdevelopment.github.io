@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 33: Infinite Animation"
+title:  "CoverT 33: Infinite Animation"
 date:   2020-03-13 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 32: CSS Transition Dropdown"
+title:  "CoverT 32: CSS Transition Dropdown"
 date:   2020-03-12 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

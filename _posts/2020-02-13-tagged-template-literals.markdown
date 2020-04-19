@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 12: Tagged Template Literals"
+title:  "CoverT 12: Tagged Template Literals"
 date:   2020-02-13 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

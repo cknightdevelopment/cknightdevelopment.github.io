@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 7: Object.fromEntries()"
+title:  "CoverT 7: Object.fromEntries()"
 date:   2020-01-28 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

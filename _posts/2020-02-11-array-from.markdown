@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 10: Array.from()"
+title:  "CoverT 10: Array.from()"
 date:   2020-02-11 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 23: Default Border Color"
+title:  "CoverT 23: Default Border Color"
 date:   2020-02-28 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

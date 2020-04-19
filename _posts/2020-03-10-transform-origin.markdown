@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 30: Transform Origin"
+title:  "CoverT 30: Transform Origin"
 date:   2020-03-10 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

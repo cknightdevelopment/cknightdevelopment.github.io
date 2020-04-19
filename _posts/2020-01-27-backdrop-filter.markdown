@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 6: backdrop-filter"
+title:  "CoverT 6: backdrop-filter"
 date:   2020-01-27 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

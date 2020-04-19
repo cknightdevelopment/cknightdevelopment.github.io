@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 24: repeating-linear-gradient"
+title:  "CoverT 24: repeating-linear-gradient"
 date:   2020-03-02 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 27: Accessing a Function's Name"
+title:  "CoverT 27: Accessing a Function's Name"
 date:   2020-03-05 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

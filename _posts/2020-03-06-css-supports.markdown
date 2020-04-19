@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 28: CSS @supports"
+title:  "CoverT 28: CSS @supports"
 date:   2020-03-06 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 16: Grid Template Columns and Rows"
+title:  "CoverT 16: Grid Template Columns and Rows"
 date:   2020-02-19 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

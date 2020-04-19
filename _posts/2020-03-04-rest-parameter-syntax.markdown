@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 26: Rest Parameter Syntax"
+title:  "CoverT 26: Rest Parameter Syntax"
 date:   2020-03-04 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

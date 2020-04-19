@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 18: grid-column & grid-row"
+title:  "CoverT 18: grid-column & grid-row"
 date:   2020-02-21 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

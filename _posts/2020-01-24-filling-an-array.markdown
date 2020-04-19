@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 5: Filling An Array"
+title:  "CoverT 5: Filling An Array"
 date:   2020-01-24 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

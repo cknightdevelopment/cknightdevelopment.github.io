@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 22: background-clip"
+title:  "CoverT 22: background-clip"
 date:   2020-02-27 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

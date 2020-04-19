@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 34: Pause Animation"
+title:  "CoverT 34: Pause Animation"
 date:   2020-03-16 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

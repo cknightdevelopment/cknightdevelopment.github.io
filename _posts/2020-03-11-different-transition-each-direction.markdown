@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 31: Different Transition Each Direction"
+title:  "CoverT 31: Different Transition Each Direction"
 date:   2020-03-11 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 8: Native Image Lazy Loading"
+title:  "CoverT 8: Native Image Lazy Loading"
 date:   2020-01-29 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, HTML]

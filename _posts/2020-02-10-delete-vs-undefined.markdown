@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 9: delete vs. undefined"
+title:  "CoverT 9: delete vs. undefined"
 date:   2020-02-10 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

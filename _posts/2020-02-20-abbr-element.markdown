@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 17: abbr Element"
+title:  "CoverT 17: abbr Element"
 date:   2020-02-20 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, HTML]

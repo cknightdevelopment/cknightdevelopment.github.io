@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 35: Box Sizing Border Box"
+title:  "CoverT 35: Box Sizing Border Box"
 date:   2020-03-17 02:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

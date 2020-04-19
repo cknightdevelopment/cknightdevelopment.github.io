@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 2: Shift & Unshift"
+title:  "CoverT 2: Shift & Unshift"
 date:   2020-01-21 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

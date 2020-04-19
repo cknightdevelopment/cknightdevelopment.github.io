@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 19: grid-template-areas"
+title:  "CoverT 19: grid-template-areas"
 date:   2020-02-24 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, CSS]

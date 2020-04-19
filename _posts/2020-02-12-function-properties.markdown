@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 11: Function Properties"
+title:  "CoverT 11: Function Properties"
 date:   2020-02-12 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]

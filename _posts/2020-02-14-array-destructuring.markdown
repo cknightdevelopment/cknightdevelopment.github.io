@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoverT Day 13: Array Destructuring"
+title:  "CoverT 13: Array Destructuring"
 date:   2020-02-14 09:00:00 -0700
 categories: [CoverT]
 tags: [CoverT, JavaScript]
