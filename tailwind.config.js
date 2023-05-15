@@ -1,5 +1,3 @@
-console.log('!!!!TEST!!!!!')
-
 module.exports = {
     content: [
       './_drafts/**/*.html',

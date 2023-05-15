@@ -1,5 +1,3 @@
-console.log('POSTCSS!!!!!!!')
-
 module.exports = {
   plugins: [
     require('tailwindcss'),
