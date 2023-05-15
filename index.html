@@ -2,17 +2,16 @@
 layout: default
 ---
 
-<div class="home">
-
-  <ul class="post-list">
+<div>
+  <ul>
     {% for post in site.posts %}
       <li>
         
         <h3>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
 
-        <div class="text-muted">
+        <div>
           <small datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ post.date | date: "%b %-d, %Y" }}
           {% if post.githubUrl %}
@@ -30,7 +29,7 @@ layout: default
           {% if post.tags.size > 0 %}
            • 
             {% for tag in post.tags %}
-            <span class="tag badge alert-info">{{ tag }}</span>
+            <span>{{ tag }}</span>
             {% endfor %}
           {% endif %}
           </small>

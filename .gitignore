@@ -4,3 +4,4 @@ _site
 _site/
 .DS_STORE
 vendor/
+node_modules/

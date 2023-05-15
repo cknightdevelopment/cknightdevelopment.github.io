@@ -27,6 +27,14 @@ highlighter: rouge
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-postcss
+
+# Disabling cache is needed for Tailwind CSS’s JIT engine.
+# Without this, the server would need to restart after each change.
+postcss:
+  cache: false
+
+include: ["node_modules/tailwindcss"]
 
 defaults:
   -
