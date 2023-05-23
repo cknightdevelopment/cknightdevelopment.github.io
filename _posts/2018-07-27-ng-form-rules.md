@@ -62,5 +62,4 @@ Registration form utilizing many (but not all) of the common features of `ng-for
 * [Documentation](https://github.com/cknightdevelopment/ng-form-rules/wiki){:target="_blank"}
 * [All examples](https://github.com/cknightdevelopment/ng-form-rules/wiki/examples){:target="_blank"}
 * [Gitter](https://gitter.im/ng-form-rules/Lobby){:target="_blank"}
-* [Twitter](https://twitter.com/ngFormRules){:target="_blank"}
 * [License](https://github.com/cknightdevelopment/ng-form-rules/blob/master/LICENSE){:target="_blank"}

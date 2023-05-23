@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 41: npm ci"
 date:   2020-05-01 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, npm]
+tags: [npm]
 ---
 
 To install packages via npm I typically just use `npm install`. This works great, updates my `package.json`, allows me to install one or more packages, etc. However, I just discovered (embarrassingly) the [`npm ci` command](https://docs.npmjs.com/cli/ci.html){:target="_blank"}.

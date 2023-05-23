@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 15: Number Precision"
 date:   2020-02-18 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-number-precision?file=index.js
 ---
 

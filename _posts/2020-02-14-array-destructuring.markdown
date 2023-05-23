@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 13: Array Destructuring"
 date:   2020-02-14 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-array-destructuring?file=index.js
 ---
 

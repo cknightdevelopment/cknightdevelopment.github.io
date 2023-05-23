@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 38: clip-path & shape-outside Magic"
 date:   2020-03-20 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-clip-path-shape-outside?file=style.css
 ---
 

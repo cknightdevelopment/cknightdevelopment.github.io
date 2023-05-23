@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   {% include head.html %}
 
-  <body>
+  <body class="bg-neutral-800 text-white p-5 px-10 font-inter">
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <div>
+      <div>
         {{ content }}
       </div>
     </div>
 
     {% include footer.html %}
 
+    <script type="text/javascript" href="{{ "/assets/js/copy-code.js" | prepend: site.baseurl }}"></script>
   </body>
-
 </html>

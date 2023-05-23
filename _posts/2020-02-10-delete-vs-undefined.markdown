@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 9: delete vs. undefined"
 date:   2020-02-10 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-delete-vs-undefined?file=index.js
 ---
 

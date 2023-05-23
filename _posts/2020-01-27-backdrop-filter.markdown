@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 6: backdrop-filter"
 date:   2020-01-27 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-backdrop-filter?file=style.css
 ---
 

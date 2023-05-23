@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 30: Transform Origin"
 date:   2020-03-10 02:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-transform-origin?file=style.css
 ---
 

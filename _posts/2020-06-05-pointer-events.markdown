@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 46: pointer-events With Overrides"
 date:   2020-06-05 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-pointer-events?file=style.css
 ---
 

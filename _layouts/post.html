@@ -1,57 +1,70 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-	<h2 class="text-green-500">{{ page.title }}</h2>
+  <header>
+	<h2 class="text-green-300 font-bungee text-3xl">{{ page.title }}</h2>
 
-    <p class="text-muted post-basic-info">
-    	<small datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-		{{ page.date | date: "%b %-d, %Y" }}
-			{% if page.githubUrl %}
-				• 
-			<i class="fa fa-github" title="Has source code"></i>
-			{% endif %}
-			{% if page.stackblitzUrl %}
-				• 
-			<i class="fa fa-file-code-o" title="Has interactive code example"></i>
-			{% endif %}
-			{% if page.youtubeId %}
-				• 
-			<i class="fa fa-youtube" title="Has YouTube video"></i>
-			{% endif %}
-    	{% if page.tags.size > 0 %}
-    	 • 
-    	 	{% for tag in page.tags %}
-	    	<span class="tag badge alert-info">{{ tag }}</span>
-	    	{% endfor %}
-    	{% endif %}
+    <div>
+      <small class="flex items-center gap-2.5" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% if page.tags.size > 0 %}
+          <div class="flex gap-1">
+          {% for tag in page.tags %}
+          {% include tag.html text=tag %}
+          {% endfor %}
+          </div>
+        {% endif %}
+            
+        {{ page.date | date: "%b %-d, %Y" }}
+
+        <div class="flex gap-1">
+          {% if page.githubUrl %}
+          <span class="material-icons" title="Has source code">
+            source
+          </span>
+          {% endif %}
+          {% if page.stackblitzUrl %}
+          <span class="material-icons" title="Has interactive code example">
+            code
+          </span>
+          {% endif %}
+          {% if page.youtubeId %}
+          <span class="material-icons-outlined" title="Has video">
+            ondemand_video
+          </span>
+          {% endif %}          
+        </div>
+    	
     	</small>
-    </p>
+    </div>
   </header>
 
-	{% if page.githubUrl %}
-	<blockquote class="external-links">
-		{% include github.html %}
-	</blockquote>
-	{% endif %}
-
-	{% if page.stackblitzUrl %}
-	<blockquote class="external-links">
-		{% include stackblitz.html %}
-	</blockquote>
-	{% endif %}
-
-	{% if page.youtubeId %}
-	<blockquote class="external-links">
-			{% include youtube.html %}
-	</blockquote>
-	{% endif %}
-
 	
+  {% if page.githubUrl or page.stackblitzUrl or page.youtubeId %}
+    <div class="bg-neutral-700 flex flex-col p-3 rounded-lg gap-1 mb-7">
+      {% if page.githubUrl %}
+      <a href="{{ page.githubUrl }}" target="_blank" class="inline-flex items-center gap-1.5">
+        <span class="material-icons">source</span><span>Source Code</span>
+      </a>
+      {% endif %}
+  
+      {% if page.stackblitzUrl %}
+      <a href="{{ page.stackblitzUrl }}" target="_blank" class="inline-flex items-center gap-1.5">
+        <span class="material-icons">code</span><span>Interactive Code Example</span>
+      </a>
+      {% endif %}
+    
+      {% if page.youtubeId %}
+      <a href="https://www.youtube.com/watch?v={{ page.youtubeId }}" target="_blank" class="inline-flex items-center gap-1.5">
+        <span class="material-icons">ondemand_video</span><span>Video</span>
+      </a>
+      {% endif %}
+    </div>
+  {% endif %}
 
-  <div class="post-content" itemprop="articleBody">
+  <div itemprop="articleBody">
+
     {{ content }}
   </div>
 

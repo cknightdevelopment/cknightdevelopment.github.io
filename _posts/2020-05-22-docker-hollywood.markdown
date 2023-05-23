@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 44: Look Like a Hacker From a Hollywood Movie"
 date:   2020-05-22 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, Docker]
+tags: [Docker]
 ---
 
 If you have ever seen a movie with hackers in it, their computer screens always seem really busy computing _stuff_. My screen never looks this way in the real world, but I thought it'd be fun to try and impress my fellow patrons at the coffee shop.

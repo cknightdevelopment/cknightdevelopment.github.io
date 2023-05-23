@@ -1,31 +1,12 @@
-<footer class="site-footer">
+<footer class="flex flex-col gap-0.5 items-center text-center text-sm mt-32">
+  <span>
+      {{ site.title }}
+  </span>
 
-  <div class="wrapper">
-
-    <h4>
-        {{ site.title }}
-        <small>{{ site.description }}</small>
-    </h2>
-
-    <div class="footer-col-wrapper">
-      <div>
-        <ul class="contact-list">
-          <li>
-            <a href="mailto:{{ site.email }}">
-              <i class="fa fa-envelope"></i> {{ site.email }}
-            </a>
-          </li>
-          {% if site.github_username %}
-          <li>
-            <a href="https://github.com/{{ site.github_username }}" target="_new">
-              <i class="fa fa-github"></i> {{ site.github_username }}
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
+  <a href="mailto:{{ site.email }}">
+    <i class="fa fa-envelope"></i> {{ site.email }}
+  </a>
+  <a href="https://github.com/{{ site.github_username }}" target="_new">
+    <i class="fa fa-github"></i> {{ site.github_username }}
+  </a>
 </footer>

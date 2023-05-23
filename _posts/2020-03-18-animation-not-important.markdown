@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 36: !important Doesn't Work With Animations"
 date:   2020-03-18 02:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-animation-not-important?file=style.css
 ---
 

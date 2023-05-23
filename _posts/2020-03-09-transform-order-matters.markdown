@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 29: Transform Order Matters"
 date:   2020-03-09 02:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-transform-order-matters?file=style.css
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 45: Fun With console"
 date:   2020-05-29 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 I recently learned that the JavaScript console has some pretty neat features that I wasn't aware of. I found [this video](https://www.youtube.com/watch?v=L8CDt1J3DAw){:target="_blank"} to be really helpful. Among the top of the list are `assert`, `table`, `group`, and `"%c"` for custom styling.

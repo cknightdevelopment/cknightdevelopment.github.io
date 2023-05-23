@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 25: radial-gradient"
 date:   2020-03-03 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-radial-gradient?file=style.css
 ---
 

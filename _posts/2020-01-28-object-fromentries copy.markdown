@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 7: Object.fromEntries()"
 date:   2020-01-28 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-fromentries?file=index.js
 ---
 

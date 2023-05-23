@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 21: background-repeat Options"
 date:   2020-02-26 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-background-repeat?file=style.css
 ---
 

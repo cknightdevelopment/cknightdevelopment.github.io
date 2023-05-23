@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 14: Generator Basics"
 date:   2020-02-17 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 Generators can `yield` multiple values on-demand. They work great with iterables and allow for creating data streams with ease.

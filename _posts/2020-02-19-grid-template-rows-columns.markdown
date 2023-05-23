@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 16: Grid Template Columns and Rows"
 date:   2020-02-19 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-grid-template-row-column?file=style.css
 ---
 

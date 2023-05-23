@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 47: padStart() Cycle"
 date:   2020-06-12 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-pad-start-cycle?file=index.js
 ---
 

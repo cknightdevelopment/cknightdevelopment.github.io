@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 23: Default Border Color"
 date:   2020-02-28 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-default-border-color?file=style.css
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 49: Destructuring the Same Property Multiple Times"
 date:   2020-06-26 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-destructure-same-property-twice?file=index.js
 ---
 

@@ -6,10 +6,15 @@ module.exports = {
       './_posts/*.md',
       './*.md',
       './*.html',
+      './assets/js/*.js',
     ],
     theme: {
-      theme: {
-        extend: {},
+      extend: {
+        fontFamily: {
+          'indieflower': ['Indie Flower', 'sans-serif'],
+          'bungee': ['Bungee', 'sans-serif'],
+          'inter': ['Inter', 'sans-serif']
+        },
       },
     },
     plugins: []

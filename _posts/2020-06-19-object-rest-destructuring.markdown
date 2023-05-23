@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 48: Object Rest Destructuring"
 date:   2020-06-19 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 stackblitzUrl: https://stackblitz.com/edit/covert-object-rest?file=index.js
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 3: in"
 date:   2020-01-22 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 The `in` operator returns if a property is in an object's own properties <strong>OR</strong> its prototype chains properties

@@ -1,20 +1,20 @@
 {% if include.type == "info" %}
-    {% assign wrapperClass = "info" %}
-    {% assign iconClass = "info-circle" %}
+    {% assign wrapperClass = "bg-blue-700" %}
+    {% assign iconClass = "info" %}
 {% elsif include.type == "warning" %}
-    {% assign wrapperClass = "warning" %}
-    {% assign iconClass = "exclamation-triangle" %}
+    {% assign wrapperClass = "bg-yellow-700" %}
+    {% assign iconClass = "warning" %}
 {% elsif include.type == "success" %}
-    {% assign wrapperClass = "success" %}
-    {% assign iconClass = "check-circle" %}
+    {% assign wrapperClass = "bg-green-700" %}
+    {% assign iconClass = "check" %}
 {% elsif include.type == "danger" %}
-    {% assign wrapperClass = "danger" %}
-    {% assign iconClass = "times-circle" %}
+    {% assign wrapperClass = "bg-red-700" %}
+    {% assign iconClass = "times" %}
 {% else %}
-    {% assign wrapperClass = "info" %}
-    {% assign iconClass = "info-circle" %}
+    {% assign wrapperClass = "bg-blue-700" %}
+    {% assign iconClass = "info" %}
 {% endif %}
 
-<div class="alert alert-{{ wrapperClass }}" role="alert">
-    <i class="fa fa-{{ iconClass }}"></i> {{ include.text }}
+<div class="p-3 rounded-lg inline-flex items-center gap-1.5 my-2 {{ wrapperClass }}" role="alert">
+    <span class="material-icons-outlined">{{iconClass}}</span> {{ include.text }}
 </div>

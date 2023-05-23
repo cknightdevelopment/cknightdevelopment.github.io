@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 4: Increment & Decrement Placements"
 date:   2020-01-23 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 The increment (`++`) and decrement (`--`) operators behave differently depending on where they are placed.

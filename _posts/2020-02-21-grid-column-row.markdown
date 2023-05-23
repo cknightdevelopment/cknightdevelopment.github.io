@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 18: grid-column & grid-row"
 date:   2020-02-21 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-grid-row-column?file=style.css
 ---
 

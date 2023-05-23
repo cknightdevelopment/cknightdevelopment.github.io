@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 5: Filling An Array"
 date:   2020-01-24 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 Filling an array with N number of values can be a little _kooky_ sometimes. Here are a few ways to do it and some things to watch out for.

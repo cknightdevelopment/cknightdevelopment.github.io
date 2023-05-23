@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 1: Numeric Separators"
 date:   2020-01-20 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 Numeric separators allow adding underscores to numeric literals to make them more readable.

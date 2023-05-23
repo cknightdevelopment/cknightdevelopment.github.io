@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 42: Kill All the Things"
 date:   2020-05-08 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, Docker, Bash]
+tags: [Docker, Bash]
 ---
 
 When using Docker I get pretty tired of having to remove containers, kill processes, etc. one at a time. I found an easy way to kill/remove multiple things in one command.

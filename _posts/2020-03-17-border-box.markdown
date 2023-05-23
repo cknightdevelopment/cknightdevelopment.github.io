@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 35: Box Sizing Border Box"
 date:   2020-03-17 02:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-box-sizing?file=style.css
 ---
 

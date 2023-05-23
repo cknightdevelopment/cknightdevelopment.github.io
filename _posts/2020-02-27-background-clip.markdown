@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 22: background-clip"
 date:   2020-02-27 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-background-clip?file=style.css
 ---
 

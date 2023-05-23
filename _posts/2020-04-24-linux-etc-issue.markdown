@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 40: View Distribution & Version of Linux"
 date:   2020-04-24 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, Bash]
+tags: [Bash]
 ---
 
 As I was learning how to use Docker more fully, I came across a useful little command for seeing what distribution/version of Linux a container may be using. 

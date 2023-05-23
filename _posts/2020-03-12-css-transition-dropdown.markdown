@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 32: CSS Transition Dropdown"
 date:   2020-03-12 02:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, CSS]
+tags: [CSS]
 stackblitzUrl: https://stackblitz.com/edit/covert-css-transition-dropdown?file=style.css
 ---
 

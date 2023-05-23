@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 43: Hooray | jq"
 date:   2020-05-15 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, Bash]
+tags: [Bash]
 ---
 
 Sometimes I need to quickly inspect a JSON file from the command line. The problem is that unlike viewing JSON data in most text editors or IDEs, the terminal provides no formatting or syntax highlighting to make things more readable.

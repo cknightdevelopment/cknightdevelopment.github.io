@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 50: Lazy Async Generators"
 date:   2020-07-03 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, JavaScript]
+tags: [JavaScript]
 ---
 
 Aysnc generators were recently added to JavaScript. They can allow for cool things like lazy async looping.

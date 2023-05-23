@@ -3,7 +3,7 @@ layout: post
 title:  "CoverT 17: abbr Element"
 date:   2020-02-20 09:00:00 -0700
 categories: [CoverT]
-tags: [CoverT, HTML]
+tags: [HTML]
 stackblitzUrl: https://stackblitz.com/edit/covert-abbr?file=index.html
 ---
 
