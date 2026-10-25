@@ -1,0 +1,5 @@
+# Optional: pin a tag to a color. Tags not listed get one automatically.
+# Colors: sky, violet, amber, rose, teal, indigo, orange, pink
+#
+# javascript: amber
+# css: sky

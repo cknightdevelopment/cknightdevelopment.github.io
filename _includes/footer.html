@@ -1,12 +1,9 @@
-<footer class="flex flex-col gap-0.5 items-center text-center text-sm mt-32">
-  <span>
-      {{ site.title }}
-  </span>
-
-  <a href="mailto:{{ site.email }}">
-    <i class="fa fa-envelope"></i> {{ site.email }}
-  </a>
-  <a href="https://github.com/{{ site.github_username }}" target="_new">
-    <i class="fa fa-github"></i> {{ site.github_username }}
-  </a>
+<footer class="border-t border-zinc-200 dark:border-zinc-800">
+  <div class="mx-auto flex max-w-3xl justify-between px-4 py-6 text-sm text-zinc-500">
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</span>
+    <span class="flex gap-4">
+      <a href="https://github.com/{{ site.github_username }}" class="link">GitHub</a>
+      <a href="{{ '/feed.xml' | relative_url }}" class="link">RSS</a>
+    </span>
+  </div>
 </footer>

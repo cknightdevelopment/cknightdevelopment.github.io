@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "./syntax.css";
+@plugin "@tailwindcss/typography";
+
+/* Palette: change the primary color in one place by repointing these. Neutrals are zinc. */
+@theme inline {
+  --color-primary-50: var(--color-emerald-50);
+  --color-primary-100: var(--color-emerald-100);
+  --color-primary-200: var(--color-emerald-200);
+  --color-primary-300: var(--color-emerald-300);
+  --color-primary-400: var(--color-emerald-400);
+  --color-primary-500: var(--color-emerald-500);
+  --color-primary-600: var(--color-emerald-600);
+  --color-primary-700: var(--color-emerald-700);
+  --color-primary-800: var(--color-emerald-800);
+  --color-primary-900: var(--color-emerald-900);
+  --color-primary-950: var(--color-emerald-950);
+}
+
+/* Dark mode follows a .dark class on <html> (see default.html) so it can be toggled. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-fade-up: fade-up 0.35s ease-out both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+  }
+}
+
+/* Everything below is unlayered so it overrides the typography plugin's .prose styles. */
+
+.dark { color-scheme: dark; }
+::selection { @apply bg-primary-200 text-primary-950 dark:bg-primary-800 dark:text-white; }
+:focus-visible { @apply rounded-sm outline-2 outline-offset-2 outline-primary-500; }
+
+/* Links in post/page content: green, subtle underline that fills in on hover. */
+.prose a:not(.tag, .heading-anchor, .toc a) {
+  @apply font-medium text-primary-700 underline decoration-primary-700/30 decoration-1 underline-offset-3 transition-colors duration-150 hover:decoration-current dark:text-primary-400 dark:decoration-primary-400/30;
+}
+/* Links to other sites get a small arrow. */
+.prose a[href^="http"]:not([href*="//knightcodes.com"])::after {
+  @apply ml-0.5 inline-block text-[0.75em] content-['↗'];
+}
+
+/* "#" links on headings (_plugins/headings.rb), shown on hover. */
+.prose :is(h2, h3, h4) { @apply scroll-mt-6; }
+.heading-anchor {
+  @apply ml-2 font-normal text-zinc-400 no-underline opacity-0 transition-opacity duration-150 hover:text-primary-600 focus:opacity-100 dark:hover:text-primary-400;
+}
+:is(h2, h3, h4):hover > .heading-anchor { @apply opacity-100; }
+
+/* Table of contents for posts with `toc: true` (_plugins/headings.rb). */
+.toc {
+  @apply my-6 rounded-md border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800;
+  ul { @apply my-0 list-none pl-0; }
+  li { @apply my-1 pl-0; }
+  a { @apply font-normal text-zinc-600 no-underline transition-colors duration-150 hover:text-primary-600 dark:text-zinc-400 dark:hover:text-primary-400; }
+}
+.toc-title { @apply my-0 font-semibold; }
+.toc-h3 { @apply pl-4!; }
+
+/* Links in site chrome (nav, footer, meta): muted until hovered. */
+.link { @apply transition-colors duration-150 hover:text-primary-600 dark:hover:text-primary-400; }
+
+/* Inline code: a light chip instead of the plugin's backticks. */
+.prose :not(pre) > code {
+  @apply rounded bg-zinc-100 px-1.5 py-0.5 font-medium before:content-none after:content-none dark:bg-zinc-800;
+}
+
+/* Call-outs: see _plugins/callouts.rb. TL;DR uses the same styles. */
+.callout {
+  @apply my-6 rounded-r-md border-l-4 px-4 py-3;
+  > * { @apply my-2; }
+  > :first-child { @apply mt-0; }
+  > :last-child { @apply mb-0; }
+}
+.callout-title { @apply mb-1 font-semibold; }
+.callout-tldr { @apply border-primary-500 bg-primary-50 dark:bg-primary-950/40; }
+.callout-tldr .callout-title { @apply text-primary-700 dark:text-primary-300; }
+.callout-note { @apply border-zinc-400 bg-zinc-100 dark:border-zinc-500 dark:bg-zinc-900; }
+.callout-note .callout-title { @apply text-zinc-700 dark:text-zinc-300; }
+.callout-tip { @apply border-sky-500 bg-sky-50 dark:bg-sky-950/40; }
+.callout-tip .callout-title { @apply text-sky-700 dark:text-sky-300; }
+.callout-important { @apply border-violet-500 bg-violet-50 dark:bg-violet-950/40; }
+.callout-important .callout-title { @apply text-violet-700 dark:text-violet-300; }
+.callout-warning { @apply border-amber-500 bg-amber-50 dark:bg-amber-950/40; }
+.callout-warning .callout-title { @apply text-amber-700 dark:text-amber-300; }
+.callout-caution { @apply border-rose-500 bg-rose-50 dark:bg-rose-950/40; }
+.callout-caution .callout-title { @apply text-rose-700 dark:text-rose-300; }
+
+/* Code blocks: Rouge colors from syntax.css, copy button from main.js. */
+div.highlighter-rouge { @apply relative; }
+div.highlight { background-color: transparent; }
+.prose pre.highlight { @apply rounded-md text-sm; }
+.copy-code {
+  @apply absolute top-2 right-2 rounded border border-zinc-600 bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300 opacity-0 transition-opacity duration-150 hover:text-white focus:opacity-100;
+}
+div.highlighter-rouge:hover .copy-code { @apply opacity-100; }
+
+/* Tags: each gets a hue from _plugins/tag_colors.rb via a .tag-<color> class. */
+.tag {
+  --tag: var(--color-zinc-500);
+  @apply inline-block rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors duration-150;
+  color: color-mix(in oklab, var(--tag) 75%, black);
+  background-color: color-mix(in oklab, var(--tag) 10%, transparent);
+  border-color: color-mix(in oklab, var(--tag) 35%, transparent);
+  &:hover { border-color: var(--tag); }
+  @variant dark { color: color-mix(in oklab, var(--tag) 65%, white); }
+}
+.tag[aria-pressed="true"] {
+  @apply text-white;
+  background-color: var(--tag);
+  border-color: var(--tag);
+}
+.tag-sky { --tag: var(--color-sky-500); }
+.tag-violet { --tag: var(--color-violet-500); }
+.tag-amber { --tag: var(--color-amber-500); }
+.tag-rose { --tag: var(--color-rose-500); }
+.tag-teal { --tag: var(--color-teal-500); }
+.tag-indigo { --tag: var(--color-indigo-500); }
+.tag-orange { --tag: var(--color-orange-500); }
+.tag-pink { --tag: var(--color-pink-500); }

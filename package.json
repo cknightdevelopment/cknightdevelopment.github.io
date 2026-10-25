@@ -1,8 +1,15 @@
 {
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i _css/main.css -o assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i _css/main.css -o assets/css/main.css --watch=always",
+    "build": "npm run build:css && bundle exec jekyll build",
+    "check:links": "bundle exec htmlproofer _site --disable-external",
+    "dev": "trap 'kill 0' EXIT; npm run watch:css & bundle exec jekyll serve --livereload --drafts"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "cssnano": "^6.0.1",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2"
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.3.3"
   }
 }

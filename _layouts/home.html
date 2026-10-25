@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{{ content }}
+
+{% if site.posts.size > 0 %}
+<div class="mb-8 space-y-4">
+  <input id="post-search" type="search" placeholder="Search posts…" aria-label="Search posts" data-index="{{ '/search.json' | relative_url }}"
+    class="w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 transition-colors duration-150 placeholder:text-zinc-400 focus:border-primary-500 focus:outline-none dark:border-zinc-700">
+  {%- assign tags = site.tags | sort %}
+  {%- if tags.size > 0 %}
+  <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by tag">
+    {%- for tag in tags %}
+    <button type="button" class="tag tag-{{ tag[0] | tag_color }}" data-tag="{{ tag[0] }}" aria-pressed="false">{{ tag[0] }} <span class="opacity-60">{{ tag[1].size }}</span></button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</div>
+
+<ul id="post-list" class="space-y-8">
+  {%- for post in site.posts %}
+  <li data-url="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '|' }}">
+    <a href="{{ post.url | relative_url }}" class="link text-xl font-semibold">{{ post.title }}</a>
+    {%- if post.tldr %}
+    <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{ post.tldr | strip_html }}</p>
+    {%- endif %}
+    <div class="mt-2">{% include post-meta.html post=post %}</div>
+  </li>
+  {%- endfor %}
+</ul>
+<p id="no-results" class="hidden text-zinc-500">No matching posts.</p>
+{% else %}
+<p class="text-zinc-500">No posts yet.</p>
+{% endif %}

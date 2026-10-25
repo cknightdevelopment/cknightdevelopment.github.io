@@ -1,0 +1,17 @@
+{%- comment -%} Date (plus time when one is set), reading time, updated date and tags for include.post. {%- endcomment -%}
+{%- assign time = include.post.date | date: "%H:%M" -%}
+{%- assign minutes = include.post.content | strip_html | number_of_words | divided_by: 200 | at_least: 1 -%}
+<div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-zinc-500">
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">
+    {{ include.post.date | date: "%B %-d, %Y" }}{% if time != "00:00" %} at {{ include.post.date | date: "%-I:%M %p" }}{% endif %}
+  </time>
+  <span aria-hidden="true">·</span>
+  <span>{{ minutes }} min read</span>
+  {%- if include.post.updated %}
+  <span aria-hidden="true">·</span>
+  <span>Updated <time datetime="{{ include.post.updated | date_to_xmlschema }}">{{ include.post.updated | date: "%B %-d, %Y" }}</time></span>
+  {%- endif %}
+  {%- for tag in include.post.tags %}
+  <a href="{{ '/' | relative_url }}?tag={{ tag | uri_escape }}" class="tag tag-{{ tag | tag_color }}">{{ tag }}</a>
+  {%- endfor %}
+</div>

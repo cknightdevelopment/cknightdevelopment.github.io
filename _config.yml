@@ -1,44 +1,26 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+# Site settings. Restart `jekyll serve` after editing this file.
 title: Knight Codes
-tagline: Chris Knight's developer blog
-email: cknightdevelopment@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Chris Knight's developer blog
-social:
+description: Chris Knight's developer blog
+author:
   name: Chris Knight
-  links:
-    - https://github.com/cknightdevelopment
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://knightcodes.com" # the base hostname & protocol for your site
-github_username:  cknightdevelopment
-repository: cknightdevelopment/cknightdevelopment.github.io
+url: "https://knightcodes.com"
+baseurl: ""
+github_username: cknightdevelopment
+timezone: America/Chicago
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+permalink: /:year/:month/:day/:title/
 
 plugins:
-  - jekyll-sitemap
+  - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-postcss
+  - jekyll-sitemap
 
-# Disabling cache is needed for Tailwind CSS’s JIT engine.
-# Without this, the server would need to restart after each change.
-postcss:
-  cache: false
-
-include: ["node_modules/tailwindcss"]
-
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      author: "Chris Knight"
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - vendor/

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  {% include head.html %}
-
-  <body class="bg-neutral-800 text-white p-5 px-10 font-inter max-w-5xl mx-auto">
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      // Set the theme before first paint: the saved choice, otherwise the system setting.
+      document.documentElement.classList.toggle("dark", (localStorage.theme ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark");
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+    {% feed_meta %}
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </head>
+  <body class="flex min-h-screen flex-col border-t-4 border-primary-600 bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
     {% include header.html %}
-
-    {{ content }}
-
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-10 motion-safe:animate-fade-up">
+      {{ content }}
+    </main>
     {% include footer.html %}
-
-    <script type="text/javascript" href="{{ "/assets/js/copy-code.js" | prepend: site.baseurl }}"></script>
   </body>
 </html>
