@@ -10,7 +10,7 @@ Turn Chris's writing into a post. **The content is Chris's and must not be AI-ge
 ## Rules
 
 - Never add, remove, reword, reorder or "improve" any sentence. That includes typos, grammar and punctuation in prose: point them out and let Chris fix them in the source, but don't change them yourself.
-- The title is Chris's. Use the doc's title as written.
+- The title and subtitle are Chris's. Use the doc's title as written, and its subtitle if it has one (Docs exports it as the line under the title). Never write a subtitle.
 - A call-out wraps an existing passage verbatim. Never write new call-out text. Use the default title (Note, Tip, ...) unless Chris supplies one.
 - The TL;DR is the one exception: you may draft it, but only as a proposal. Build it from Chris's own sentences where possible, and only use it once Chris has approved or rewritten it.
 - When unsure whether a change touches content or only formatting, ask.
@@ -26,7 +26,15 @@ Only fix what the export broke:
 - Turn code that lost its formatting (monospace runs, pasted snippets) back into fenced blocks with the right language, or inline `code`. Don't change the code itself.
 - Move the doc title into the `title` front matter instead of an `# H1`. Body headings start at `##`.
 - Images: Docs exports embed them as base64 data URIs (often as reference links at the bottom). Decode each into `assets/images/posts/<slug>/<descriptive-name>.png` and link it as `/assets/images/posts/<slug>/...`. Ask Chris for alt text.
-- Drop empty paragraphs, stray `&nbsp;` and trailing whitespace.
+- Quotes with an attribution (e.g. `"Quote." \- Person`) become a blockquote with the attribution in a `<cite>` line, without the dash (CSS adds it):
+
+  ```markdown
+  > "Quote."
+  >
+  > <cite>Person</cite>
+  ```
+- Explicit heading IDs from the export (`## Heading {#id}`) can be dropped: Jekyll generates the same IDs. Point any in-post links at the generated ID, which is the heading lowercased with spaces as hyphens and punctuation (including smart quotes) removed. Verify with `npm run check:links` after a `--drafts` build.
+- Drop empty headings (a bare `##`), empty paragraphs, stray `&nbsp;` and trailing whitespace.
 
 ## 2. Propose, then wait
 

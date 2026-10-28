@@ -29,6 +29,7 @@ To publish, add `_posts/YYYY-MM-DD-slug.md`:
 ---
 layout: post
 title: My Post
+subtitle: Optional line under the title
 date: 2026-10-25 14:30 -0500   # time is optional
 tags: [javascript, css]
 tldr: One-line summary.        # optional

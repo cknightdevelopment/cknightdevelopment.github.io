@@ -1,5 +1,5 @@
 # Adds a "#" link to each h2-h4 in posts and pages, and, when front matter has
-# `toc: true`, a table of contents built from the h2/h3 headings.
+# `toc: true`, a table of contents built from the h2/h3 headings, placed before the first h2.
 module Headings
   PATTERN = %r{<h([2-4]) id="([^"]+)">(.*?)</h\1>}m
 
@@ -13,7 +13,9 @@ module Headings
     return html unless toc && entries.any?
 
     items = entries.map { |level, id, text| %(<li class="toc-h#{level}"><a href="##{id}">#{text}</a></li>) }
-    %(<nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ul>#{items.join}</ul></nav>\n#{html})
+    # Placed just before the first h2, so any intro reads first.
+    nav = %(<nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ul>#{items.join}</ul></nav>\n)
+    html.sub(/<h2 /) { nav + "<h2 " }
   end
 end
 

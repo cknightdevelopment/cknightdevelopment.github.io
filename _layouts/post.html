@@ -4,6 +4,9 @@ layout: default
 <article>
   <header class="mb-8">
     <h1 class="mb-2 text-3xl font-bold">{{ page.title }}</h1>
+    {%- if page.subtitle %}
+    <p class="mb-3 text-xl text-zinc-600 dark:text-zinc-400">{{ page.subtitle }}</p>
+    {%- endif %}
     {% include post-meta.html post=page %}
   </header>
   <div class="prose prose-zinc max-w-none dark:prose-invert">

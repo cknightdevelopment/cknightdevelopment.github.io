@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Example Post
+subtitle: A tour of everything a post can do
 date: 2026-10-25 14:30 -0500
 tags: [javascript, meta]
 updated: 2026-10-26
@@ -20,6 +21,7 @@ Links look like [this one to the Jekyll docs](https://jekyllrb.com/docs/) inside
 ## Front matter
 
 - `title`: shown at the top and in the post list.
+- `subtitle`: optional line under the title. Also shown in the post list (instead of the TL;DR) and used as the description in search results and link previews.
 - `date`: include a time (`2026-10-25 14:30 -0500`) to show it, or leave it off to show only the date.
 - `tags`: one or more, e.g. `[javascript, css]`. They link to the home page filter.
 - `tldr`: optional summary, shown in a box at the top and in the post list. Markdown works.
@@ -27,6 +29,14 @@ Links look like [this one to the Jekyll docs](https://jekyllrb.com/docs/) inside
 - `toc: true`: optional table of contents built from `##` and `###` headings. Use it for long posts.
 
 Reading time is calculated automatically. Hover any heading to get a `#` link to that section.
+
+## Quotes
+
+A blockquote, with an optional `<cite>` line for who said it:
+
+> "Quote text goes here."
+>
+> <cite>Someone Famous</cite>
 
 ## Call-outs
 

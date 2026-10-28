@@ -21,8 +21,9 @@ layout: default
   {%- for post in site.posts %}
   <li data-url="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '|' }}">
     <a href="{{ post.url | relative_url }}" class="link text-xl font-semibold">{{ post.title }}</a>
-    {%- if post.tldr %}
-    <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{ post.tldr | strip_html }}</p>
+    {%- assign summary = post.subtitle | default: post.tldr %}
+    {%- if summary %}
+    <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{ summary | strip_html }}</p>
     {%- endif %}
     <div class="mt-2">{% include post-meta.html post=post %}</div>
   </li>

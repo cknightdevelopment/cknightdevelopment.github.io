@@ -6,7 +6,7 @@ sitemap: false
   {%- for post in site.posts %}
   {
     "url": {{ post.url | relative_url | jsonify }},
-    "text": {{ post.title | append: " " | append: post.tldr | append: " " | append: post.content | strip_html | normalize_whitespace | downcase | jsonify }}
+    "text": {{ post.title | append: " " | append: post.subtitle | append: " " | append: post.tldr | append: " " | append: post.content | strip_html | normalize_whitespace | downcase | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {%- endfor %}
 ]

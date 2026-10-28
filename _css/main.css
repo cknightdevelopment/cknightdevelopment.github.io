@@ -68,6 +68,17 @@
   @apply rounded bg-zinc-100 px-1.5 py-0.5 font-medium before:content-none after:content-none dark:bg-zinc-800;
 }
 
+/* Quotes: a plain markdown blockquote, with an optional <cite> line for who said it:
+     > "Quote text."
+     >
+     > <cite>Person</cite>
+   The plugin's automatic quote marks are off, since quotes are written with their own. */
+.prose blockquote {
+  @apply my-8 border-l-2 border-primary-500 pl-5 text-lg font-normal text-zinc-700 dark:text-zinc-300;
+  p::before, p::after { content: none; }
+  cite { @apply block text-sm font-medium text-zinc-500 not-italic before:content-['—_']; }
+}
+
 /* Call-outs: see _plugins/callouts.rb. TL;DR uses the same styles. */
 .callout {
   @apply my-6 rounded-r-md border-l-4 px-4 py-3;
