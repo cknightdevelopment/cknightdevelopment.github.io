@@ -38,6 +38,14 @@ A blockquote, with an optional `<cite>` line for who said it:
 >
 > <cite>Someone Famous</cite>
 
+## Audio
+
+A labeled, playable clip (files go in `assets/audio/posts/<slug>/`). The label supports markdown:
+
+```liquid
+{% raw %}{% include audio.html src="/assets/audio/posts/my-post/clip.m4a" label="My clip" %}{% endraw %}
+```
+
 ## Call-outs
 
 > [!NOTE]

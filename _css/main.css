@@ -79,6 +79,13 @@
   cite { @apply block text-sm font-medium text-zinc-500 not-italic before:content-['—_']; }
 }
 
+/* Audio clips: _includes/audio.html. */
+.audio-clip {
+  @apply my-6;
+  figcaption { @apply mt-0 mb-2 text-sm font-medium text-zinc-600 dark:text-zinc-400; }
+  audio { @apply w-full; }
+}
+
 /* Call-outs: see _plugins/callouts.rb. TL;DR uses the same styles. */
 .callout {
   @apply my-6 rounded-r-md border-l-4 px-4 py-3;

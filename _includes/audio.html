@@ -1,0 +1,8 @@
+{%- comment -%}
+  Labeled, playable audio clip:
+    {% include audio.html src="/assets/audio/posts/<slug>/clip.m4a" label="Label" %}
+{%- endcomment -%}
+<figure class="audio-clip">
+  <figcaption>{{ include.label | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>
+  <audio controls preload="metadata" src="{{ include.src | relative_url }}"></audio>
+</figure>

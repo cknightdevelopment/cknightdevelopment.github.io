@@ -26,6 +26,7 @@ Only fix what the export broke:
 - Turn code that lost its formatting (monospace runs, pasted snippets) back into fenced blocks with the right language, or inline `code`. Don't change the code itself.
 - Move the doc title into the `title` front matter instead of an `# H1`. Body headings start at `##`.
 - Images: Docs exports embed them as base64 data URIs (often as reference links at the bottom). Decode each into `assets/images/posts/<slug>/<descriptive-name>.png` and link it as `/assets/images/posts/<slug>/...`. Ask Chris for alt text.
+- Audio clips: save as AAC `.m4a` in `assets/audio/posts/<slug>/` and embed with `_includes/audio.html` (see `_drafts/example-post.md`). If you generate speech for a clip, use Chris's own sentences from the post and confirm the clip text and labels with Chris.
 - Quotes with an attribution (e.g. `"Quote." \- Person`) become a blockquote with the attribution in a `<cite>` line, without the dash (CSS adds it):
 
   ```markdown

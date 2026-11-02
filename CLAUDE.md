@@ -28,7 +28,8 @@ Ruby comes from Homebrew (`/opt/homebrew/opt/ruby/bin`); macOS system Ruby is to
 - `_plugins/tag_colors.rb`: `tag_color` filter that gives each tag a stable color (`.tag-<color>` in `_css/main.css`). Pin a tag's color in `_data/tag_colors.yml`.
 - `assets/js/main.js`: dark mode toggle, code copy buttons, home page tag filter and search.
 - `search.json`: search index generated at build time.
-- `assets/images/posts/<slug>/`: images for a post.
+- `assets/images/posts/<slug>/`: images for a post. `assets/audio/posts/<slug>/`: audio clips (AAC `.m4a`, via `afconvert -f m4af -d aac in out.m4a`).
+- `_includes/audio.html`: labeled audio player: `{% include audio.html src="/assets/audio/posts/<slug>/clip.m4a" label="Label" %}`.
 
 ## Post format
 
